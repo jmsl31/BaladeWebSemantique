@@ -8,7 +8,7 @@ public class SparqlClientExample {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        SparqlClient sparqlClient = new SparqlClient("192.168.250.91:8080/sparqluedo");
+        SparqlClient sparqlClient = new SparqlClient("localhost:3030/Balade");
 
         String query = "ASK WHERE { ?s ?p ?o }";
         boolean serverIsUp = sparqlClient.ask(query);
