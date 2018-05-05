@@ -27,14 +27,12 @@ public class Main {
         CsvHelperParis FilmParis = new CsvHelperParis();
         CsvHelperSanFrancisco FilmSanFrancisco = new CsvHelperSanFrancisco();
        
-     /*   FilmMarseille.readFile("marseille_tournages_series_2015.csv");
+     //   FilmMarseille.readFile("marseille_tournages_series_2015.csv");
         FilmMarseille.readFile("marseille_tournages_films_2015.csv");        
         
         for (Film film : FilmMarseille.ListFilm) {
            ListFilmComplet.add(film);
         }
-        
-        */
         
         for (Film film : FilmParis.readFile("film_paris.csv")) {
            ListFilmComplet.add(film);

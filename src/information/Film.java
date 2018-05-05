@@ -64,6 +64,27 @@ public class Film {
         this.acteurs = new ArrayList<>();
     }
 
+    public Film(String titre, String type, String annee, String note, String duree, List<String> genre, String realisateur, String affiche, List<String> origine, String resume, String imdbId, String anneeTournage, String nbjoursTournage, String adresse, String codePostale, String coordonneeLat, String coordonneeLong, List<String> acteurs) {
+        this.titre = titre;
+        this.type = type;
+        this.annee = annee;
+        this.note = note;
+        this.duree = duree;
+        this.genre = genre;
+        this.realisateur = realisateur;
+        this.affiche = affiche;
+        this.origine = origine;
+        this.resume = resume;
+        this.imdbId = imdbId;
+        this.anneeTournage = anneeTournage;
+        this.nbjoursTournage = nbjoursTournage;
+        this.adresse = adresse;
+        this.codePostale = codePostale;
+        this.coordonneeLat = coordonneeLat;
+        this.coordonneeLong = coordonneeLong;
+        this.acteurs = acteurs;
+    }
+
     public String getCoordonneeLat() {
         return coordonneeLat;
     }
@@ -225,24 +246,18 @@ public class Film {
            this.acteurs.add(string);
         }
     }
-        
-    
-   
-   
-   
-    
+
     public void GetFilmInfo()
     { 
 
     //permet pour un titre de film de récupérer un hachage contenant les couples (propriété du film / valeur) retournés par OMDB
-		HashMap<String, String> ret = new HashMap<>();
 		
 		 URL url;
 	      HttpURLConnection conn;
 	      BufferedReader rd;
 	      String line;
 	      String result = "";
-	      try {
+	try {
 	         url = new URL(this.baseUrl+URLEncoder.encode(getTitre(), "UTF-8"));
 	         conn = (HttpURLConnection) url.openConnection();
 	         conn.setRequestMethod("GET");
@@ -264,10 +279,7 @@ public class Film {
          this.setOrigine(obj.getString("Country"));
          this.setRealisateur(obj.getString("Director"));
          this.setResume(obj.getString("Plot"));
-         
-         
-	         
-	         
+               
 	      } catch (IOException e) {
 	         e.printStackTrace();
 	      } catch (Exception e) {
