@@ -272,7 +272,7 @@ public class Film {
          this.setAnnee(obj.getString("Year"));
          this.setActeurs(obj.getString("Actors"));
          this.setAffiche(obj.getString("Poster"));
-         this.setDuree(obj.getString("RunTime"));
+         this.setDuree(obj.getString("Runtime"));
          this.setGenre(obj.getString("Genre"));
          this.setImdbId(obj.getString("imdbID"));
          this.setNote(obj.getString("imdbRating"));

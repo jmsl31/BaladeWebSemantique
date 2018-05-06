@@ -66,7 +66,7 @@ public class CsvHelperParis extends CsvFileHelper{
                         //String adresse, String codePostale, String coordonneeLat, String coordonneeLong, List<String> acteurs
                         //Split des coordonnées GPS.
                         
-                        String[] coordonne = record.get(record.get(Movie_Coordonnées)).split(",");
+                        String[] coordonne = record.get(Movie_Coordonnées).split(",");
                         
                         Film film = new Film(record.get(Movie_Title),record.get(Movie_type),"","","",
                                              new ArrayList<String>(),record.get(Movie_realisateur),"",new ArrayList<String>(),

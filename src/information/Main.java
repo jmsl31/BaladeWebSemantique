@@ -31,20 +31,24 @@ public class Main {
         FilmMarseille.readFile("marseille_tournages_films_2015.csv");        
         
         for (Film film : FilmMarseille.ListFilm) {
+           film.GetFilmInfo();
            ListFilmComplet.add(film);
         }
         
         for (Film film : FilmParis.readFile("film_paris.csv")) {
+           film.GetFilmInfo();
            ListFilmComplet.add(film);
         }
        
         
         for (Film film : FilmSanFrancisco.readFile("film_San_Francisco.csv")) {
+           film.GetFilmInfo();
            ListFilmComplet.add(film);
         }
         
-        for (Film film : ListFilmComplet) {
-            film.GetFilmInfo();        
+        System.out.println("Nombre de film : " + ListFilmComplet.size());
+        for (int i = 0; i < ListFilmComplet.size(); i++) {
+             System.out.println(ListFilmComplet.get(i).titre);
         }
         
     }
