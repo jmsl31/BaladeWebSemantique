@@ -1,0 +1,116 @@
+﻿
+PREFIX : </Balade#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+//inserer un film.
+INSERT 
+{
+  DBFILM:AMI-AMI ?REAL DBFILM:TARBES.
+  DBFILM:AMI-AMI RDFS:LABEL "AMI-AMI".
+  DBFILM:TARBES RDFS:LABEL "TARBES"@FR.
+  
+  DBFILM:AMI-AMI ?TYPE DBFILM:FILMAMI-AMI.
+  DBFILM:FILMAMI-AMI RDFS:LABEL "TELEFILM".
+  
+  DBFILM:AMI-AMI DBFILM:REALISEEN DBFILM:AMI-AMI_DATETOURNAGE.
+  DBFILM:AMI-AMI_DATETOURNAGE RDFS:LABEL "2013".
+  
+  DBFILM:AMI-AMI ?SORTIE DBFILM:AMI-AMI_ANNEE.
+  DBFILM:AMI-AMI_ANNEE RDFS:LABEL "2019".
+  
+  DBFILM:AMI-AMI ?NOTE DBFILM:NOTEAMI-AMI.
+  DBFILM:NOTEAMI-AMI RDFS:LABEL "7.6".
+  
+  dbfilm:Ami-Ami ?duree dbfilm:dureeAmi-Ami.
+  dbfilm:dureeAmi-Ami rdfs:label "150".
+  
+   dbfilm:Ami-Ami ?realis dbfilm:RealisateurAmi-Ami.
+   dbfilm:RealisateurAmi-Ami rdfs:label "Spielberg".
+  
+  dbfilm:Ami-Ami ?affiche dbfilm:afficheAmi-Ami.
+  dbfilm:afficheAmi-Ami rdfs:label "https://ia.media-imdb.com/images/M/MV5BMTA3MDkxOTc4NDdeQTJeQWpwZ15BbWU4MDAxNzgyNTQz._V1_SX300.jpg".
+ 
+  
+  dbfilm:Ami-Ami ?resume dbfilm:ResumeAmi-Ami.
+  dbfilm:ResumeAmi-Ami rdfs:label "EHBDHBHEBDHBEDHEBDHBHE jBDEHDBH EBDHB deb H DHBD EHB BEHBD hED EHD EHD HDHEBDHDBHEBB EHB EB HDBHDB ".
+  
+  dbfilm:Ami-Ami ?imdbId dbfilm:imdbIdAmi-Ami.
+  dbfilm:imdbIdAmi-Ami rdfs:label "VZDVVDUAYUBDHIBAIDB".
+  
+  dbfilm:Ami-Ami ?nbjour dbfilm:NbJoursTournageAmi-Ami.
+  dbfilm:NbJoursTournageAmi-Ami rdfs:label "3".
+  
+  dbfilm:Ami-Ami ?adresse dbfilm:adresseTournageAmi-Ami.
+  dbfilm:adresseTournageAmi-Ami rdfs:label "629 route de Toulouse".
+  
+  dbfilm:Ami-Ami ?zip dbfilm:zipCodeTournageAmi-Ami.
+  dbfilm:zipCodeTournageAmi-Ami rdfs:label "31410".
+  
+  dbfilm:Ami-Ami ?cordlat dbfilm:coordlatAmi-Ami.
+  dbfilm:coordlatAmi-Ami rdfs:label "98,65".
+  
+  dbfilm:Ami-Ami ?cordlong dbfilm:coordlongAmi-Ami.
+  dbfilm:coordlongAmi-Ami rdfs:label "78,98".
+ 
+}
+
+where {
+     ?real rdfs:label "a pour lieu"@fr.
+	 ?type rdfs:label "apourtype"@fr.
+	 ?annee rdfs:label "realiseen"@fr.
+	 ?sortie rdfs:label "sortieen"@fr.
+	 ?note rdfs:label "apournote"@fr.
+	 ?duree rdfs:label "apourduree"@fr.
+	 ?realis rdfs:label "estrealise"@fr.
+	 ?affiche rdfs:label "apouraffiche"@fr.
+	 ?resume rdfs:label "apouresume"@fr.
+	 ?imdbId rdfs:label "apourimdbId"@fr.
+	 ?nbjour rdfs:label "atournerjour"@fr.
+	 ?adresse rdfs:label "apouradresse"@fr.
+	 ?zip rdfs:label "apourzip"@fr.
+	 ?cordlat rdfs:label "apourlat"@fr.
+	 ?cordlong rdfs:label "apourlong"@fr.
+}
+
+
+
+//inserer Acteur
+
+INSERT 
+{
+  dbfilm:Lawrence ?real dbfilm:Ami-Ami.
+  dbfilm:Lawrence rdfs:label "Jennifer Lawrence".
+ 
+}
+
+where {
+     ?real rdfs:label "jouedans"@fr.
+}
+
+//inserer un genre 
+
+INSERT 
+{
+  dbfilm:Ami-Ami ?real dbfilm:Action.
+  dbfilm:Action rdfs:label "Action".
+ 
+}
+
+where {
+     ?real rdfs:label "apourgenre"@fr.
+}
+
+//inserer origine
+
+INSERT 
+{
+  dbfilm:Ami-Ami ?real dbfilm:Action.
+  dbfilm:Action rdfs:label "Action".
+ 
+}
+
+where {
+     ?real rdfs:label "apourorigine"@fr.
+}
