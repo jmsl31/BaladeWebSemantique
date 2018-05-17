@@ -68,7 +68,7 @@ public class CsvHelperParis extends CsvFileHelper{
                         
                         String[] coordonne = record.get(Movie_Coordonnées).split(",");
                         
-                        Film film = new Film(record.get(Movie_Title),record.get(Movie_type),"","","",
+                        Film film = new Film("Paris",record.get(Movie_Title),record.get(Movie_type),"","","",
                                              new ArrayList<String>(),record.get(Movie_realisateur),"",new ArrayList<String>(),
                                              "","",record.get(Movie_annéetournage),"",
                                              record.get(Movie_adresse),record.get(Movie_codePostale),coordonne[0],coordonne[1],new ArrayList<String>());

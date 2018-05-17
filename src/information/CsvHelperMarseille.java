@@ -58,7 +58,7 @@ public class CsvHelperMarseille extends CsvFileHelper{
 	                //Creation de l'objet Film
                         //Film (String adresse, String codePostale, String coordonneeLat, String coordonneeLong, List<String> acteurs) {
     
-                        Film film = new Film(record.get(Movie_Title), 
+                        Film film = new Film("Marseille",record.get(Movie_Title), 
                                              "","","","",new ArrayList<String>(),
                                              record.get(Movie_realisateur),"",
                                              new ArrayList<String>(),"","","",

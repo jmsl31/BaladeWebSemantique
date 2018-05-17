@@ -1,5 +1,6 @@
 package exemple;
 
+import information.SparqlClient;
 import java.util.Map;
 
 public class SparqlClientExample {

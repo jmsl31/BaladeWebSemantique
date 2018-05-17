@@ -46,6 +46,9 @@ public class Main {
            ListFilmComplet.add(film);
         }
         
+        for (Film film : ListFilmComplet) {
+            film.setUpdateFilmOntologie(film);
+        }
         System.out.println("Nombre de film : " + ListFilmComplet.size());
         for (int i = 0; i < ListFilmComplet.size(); i++) {
              System.out.println(ListFilmComplet.get(i).titre);
