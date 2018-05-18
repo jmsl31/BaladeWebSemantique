@@ -32,7 +32,7 @@ public class CsvHelperSanFrancisco extends CsvFileHelper{
     public List<Film> readFile(String fileName) throws FileNotFoundException, IOException {
     
          FileReader fileReader = null;      
-
+         String adresseOld = null ;
 	        CSVParser csvFileParser = null;      
 
 	        //Creation du format du CVS
@@ -59,6 +59,9 @@ public class CsvHelperSanFrancisco extends CsvFileHelper{
                         //String resume, String imdbId, String anneeTournage, String nbjoursTournage,
                         //String adresse, String codePostale, String coordonneeLat, String coordonneeLong, List<String> acteurs
                         //Split des coordonnées GPS.
+                        
+                        adresseOld = record.get(Movie_Title);
+                        
                                                 
                         Film film = new Film("San Francisco",record.get(Movie_Title),"","","","",
                                              new ArrayList<String>(),record.get(Movie_realisateur),"",new ArrayList<String>(),

@@ -26,31 +26,36 @@ public class Main {
         CsvHelperMarseille FilmMarseille = new CsvHelperMarseille();
         CsvHelperParis FilmParis = new CsvHelperParis();
         CsvHelperSanFrancisco FilmSanFrancisco = new CsvHelperSanFrancisco();
+        int i=0;
        
      //   FilmMarseille.readFile("marseille_tournages_series_2015.csv");
         FilmMarseille.readFile("marseille_tournages_films_2015.csv");        
         
         for (Film film : FilmMarseille.ListFilm) {
-           film.GetFilmInfo();
+           
            ListFilmComplet.add(film);
+            System.out.println("Nombre de film:"+ i++);
         }
         
         for (Film film : FilmParis.readFile("film_paris.csv")) {
-           film.GetFilmInfo();
+           
            ListFilmComplet.add(film);
+           System.out.println("Nombre de film:"+ i++);
         }
        
         
         for (Film film : FilmSanFrancisco.readFile("film_San_Francisco.csv")) {
-           film.GetFilmInfo();
+      
            ListFilmComplet.add(film);
+           System.out.println("Nombre de film:"+ i++);
         }
-        
+       
         for (Film film : ListFilmComplet) {
+            film.GetFilmInfo();
             film.setUpdateFilmOntologie(film);
         }
         System.out.println("Nombre de film : " + ListFilmComplet.size());
-        for (int i = 0; i < ListFilmComplet.size(); i++) {
+        for (int j = 0; j < ListFilmComplet.size(); j++) {
              System.out.println(ListFilmComplet.get(i).titre);
         }
         
