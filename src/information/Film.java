@@ -12,7 +12,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import org.json.JSONObject;
 
@@ -38,13 +37,14 @@ public class Film {
         String imdbId;
         String anneeTournage;
         String nbjoursTournage;
-        String adresse;
+        List<String> adresse;
         String codePostale;
         String coordonneeLat;
         String coordonneeLong;
         List<String> acteurs;
         private String baseUrl = "http://www.omdbapi.com/?y=&plot=short&r=json&apikey=b17302a6&t=";//base de l'url correspondant à la requête get qui devra être compléter avec le nom du film à considérer
         SparqlClient sparqlClient;
+        String titlehold ;
         
     public Film() {
         this.titre = "";
@@ -60,15 +60,24 @@ public class Film {
         this.imdbId = "";
         this.anneeTournage = "";
         this.nbjoursTournage = "";
-        this.adresse = "";
+        this.adresse =new ArrayList<>();
         this.codePostale = "";
         this.coordonneeLat = "";
         this.coordonneeLong = "";
         this.acteurs = new ArrayList<>();
         sparqlClient = new SparqlClient("localhost:3030/Balade");
+        titlehold ="";
     }
 
-    public Film(String ville,String titre, String type, String annee, String note, String duree, List<String> genre, String realisateur, String affiche, List<String> origine, String resume, String imdbId, String anneeTournage, String nbjoursTournage, String adresse, String codePostale, String coordonneeLat, String coordonneeLong, List<String> acteurs) {
+    public String getTitlehold() {
+        return titlehold;
+    }
+
+    public void setTitlehold(String titlehold) {
+        this.titlehold = titlehold;
+    }
+
+    public Film(String ville,String titre, String type, String annee, String note, String duree, List<String> genre, String realisateur, String affiche, List<String> origine, String resume, String imdbId, String anneeTournage, String nbjoursTournage, List<String> adresse, String codePostale, String coordonneeLat, String coordonneeLong, List<String> acteurs) {
         this.ville = ville;
         this.titre = titre;
         this.type = type;
@@ -90,7 +99,47 @@ public class Film {
         this.acteurs = acteurs;
         sparqlClient = new SparqlClient("localhost:3030/Balade");
     }
+    public Film setFilm(String ville,String titre, String type, String annee, String note, String duree, String genre,
+                        String realisateur, String affiche, String origine, String resume, String imdbId,
+                        String anneeTournage, String nbjoursTournage, String adresse, String codePostale, String coordonneeLat, String coordonneeLong, String acteurs)
+    {
+        if (titlehold.contains(titre))
+        {
+            this.setAdresse(adresse);
+        }
+        else
+        {
+            this.setVille(ville);
+            this.setTitre(titre);
+            this.setType(type);
+            this.setAnnee(annee);
+            this.setNote(note);
+            this.setDuree(duree);
+            this.setGenre(genre);
+            this.setRealisateur(realisateur);
+            this.setAffiche(affiche);
+            this.setOrigine(origine);
+            this.setResume(resume);
+            this.setImdbId(imdbId);
+            this.setAnneeTournage(anneeTournage);
+            this.setNbjoursTournage(nbjoursTournage);
+            this.setAdresse(adresse);
+            this.setCodePostale(codePostale);
+            this.setCoordonneeLat(coordonneeLat);
+            this.setCoordonneeLong(coordonneeLong);
+            this.setActeurs(acteurs);
+            titlehold = titre;
+        }
+        
+    }
 
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
     public String getCoordonneeLat() {
         return coordonneeLat;
     }
@@ -163,7 +212,7 @@ public class Film {
         return nbjoursTournage;
     }
 
-    public String getAdresse() {
+    public List<String> getAdresse() {
         return adresse;
     }
 
@@ -237,7 +286,8 @@ public class Film {
     }
 
     public void setAdresse(String adresse) {
-        this.adresse = adresse;
+        
+           this.adresse.add(adresse);
     }
 
     public void setCodePostale(String codePostale) {

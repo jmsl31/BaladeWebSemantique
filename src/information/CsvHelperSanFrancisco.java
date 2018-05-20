@@ -32,7 +32,7 @@ public class CsvHelperSanFrancisco extends CsvFileHelper{
     public List<Film> readFile(String fileName) throws FileNotFoundException, IOException {
     
          FileReader fileReader = null;      
-         String adresseOld = null ;
+         
 	        CSVParser csvFileParser = null;      
 
 	        //Creation du format du CVS
@@ -49,6 +49,7 @@ public class CsvHelperSanFrancisco extends CsvFileHelper{
                     
                     //Recuperation des enregistrements dans le CSV
 	            List csvRecords = csvFileParser.getRecords(); 	             
+                    Film film = new Film();
                     
 	            //Lecture des enregistrements du fichier CVS 
 	            for (int i = 1; i < csvRecords.size(); i++) {
@@ -60,14 +61,19 @@ public class CsvHelperSanFrancisco extends CsvFileHelper{
                         //String adresse, String codePostale, String coordonneeLat, String coordonneeLong, List<String> acteurs
                         //Split des coordonnées GPS.
                         
-                        adresseOld = record.get(Movie_Title);
+                       
                         
-                                                
-                        Film film = new Film("San Francisco",record.get(Movie_Title),"","","","",
-                                             new ArrayList<String>(),record.get(Movie_realisateur),"",new ArrayList<String>(),
+                        film.setFilm("San Francisco",record.get(Movie_Title),"","","","",
+                                             "",record.get(Movie_realisateur),"","",
                                              "","","","",
-                                             record.get(Movie_adresse),"","","",new ArrayList<String>());
-                        ListFilm.add(film);
+                                             record.get(Movie_adresse),"","","","");
+                        
+                        if (!film.getTitlehold().contains(film.getTitre()))
+                        {
+                            ListFilm.add(film);
+                            film = new Film();
+                        }
+                        
                     }
         } 
 	catch (Exception e) {
