@@ -80,7 +80,7 @@ where {
 
 INSERT 
 {
-  dbfilm:Lawrence ?real dbfilm:Ami-Ami.
+  dbfilm:Lawrence dbfilm:jouedans dbfilm:RedSparrow.
   dbfilm:Lawrence rdfs:label "Jennifer Lawrence".
  
 }

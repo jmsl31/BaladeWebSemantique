@@ -227,7 +227,8 @@ public class Film {
     }
 
     public void setDuree(String duree) {
-        this.duree = duree;
+        String d = duree.replaceAll("min", "");
+        this.duree = d;
     }
 
     public void setGenre(String genre) {
@@ -336,12 +337,12 @@ public class Film {
            String l = lieu.replaceAll(" ","");
            String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
-                "dbfilm:"+t+" dbfilm:a_pour dbfilm:"+l+".\n"+
+                "dbfilm:"+t+" dbfilm:sederoule dbfilm:"+l+".\n"+
                 "dbfilm:"+t+" dbfilm:titre \""+titre+"\".\n"+
                 "dbfilm:"+l+" rdfs:label \""+lieu+"\"@fr.\n"+
                 "}";
@@ -355,10 +356,10 @@ public class Film {
            String l = type.replaceAll(" ","");
            String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+t+" dbfilm:type \""+type+"\"@fr.\n"+
                 "}";
@@ -372,10 +373,10 @@ public class Film {
             String l = datetournage.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+t+" dbfilm:datetournage \""+datetournage+"\".\n"+
                 "}\n";
@@ -389,10 +390,10 @@ public class Film {
             String l = datesortie.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+t+" dbfilm:annee \""+datesortie+"\"@fr.\n"+
                 
@@ -407,10 +408,10 @@ public class Film {
            String l = note.replaceAll(" ","");
            String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+t+" dbfilm:note \""+note+"\"@fr.\n"+
                 
@@ -424,12 +425,12 @@ public class Film {
             String d = duree.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
-                "dbfilm:"+t+" dbfilm:duree \""+duree+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:duree \""+duree+"\".\n"+
                 
                 "}";
            
@@ -441,14 +442,13 @@ public class Film {
             String d = realisateur.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?realis dbfilm:"+t+"realisateur.\n"+
-                "dbfilm:"+t+"realisateur rdfs:label \""+realisateur+"\"@fr.\n"+
-                
+                "dbfilm:"+t+" dbfilm:apourrealisateur dbfilm:"+realisateur+".\n"+
+                "dbfilm:"+realisateur+" rdfs:label \""+ realisateur+"\".\n"+    
                 "}";
            
            sparqlClient.update(query);  
@@ -459,10 +459,10 @@ public class Film {
             String d = affiche.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+t+" dbfilm:affiche \""+affiche+"\"@fr.\n"+
                 
@@ -476,10 +476,10 @@ public class Film {
             String d = resume.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+t+" dbfilm:resume \""+resume+"\"@fr.\n"+
                 
@@ -493,10 +493,10 @@ public class Film {
             String d = Id.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+t+" dbfilm:imdbid \""+Id+"\"@fr.\n"+
                 
@@ -510,30 +510,30 @@ public class Film {
             String d = Nb.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
-                "dbfilm:"+t+" dbfilm:NbJoursTournagel \""+Nb+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:nbjourstournage \""+Nb+"\"@fr.\n"+
                 
                 "}";
            
            sparqlClient.update(query);  
          }
-         public void SetOntologieAdresse(String titre,String adresse)
+         public void SetOntologieAdresse(String titre,String adresse,String ville)
          {
             String t = titre .replaceAll(" ", "");
             String d = adresse.replaceAll(" ","");
+            String v = ville.replaceAll(" ", "");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
-                "dbfilm:"+t+" dbfilm:adresse \""+adresse+"\"@fr.\n"+
-                
+                "dbfilm:"+t+" dbfilm:adressetournage \""+ adresse+"\".\n"+  
                 "}";
            
            sparqlClient.update(query);  
@@ -545,12 +545,12 @@ public class Film {
             String d = zip.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
-                "dbfilm:"+t+" dbfilm:ZipCodeTournage \""+zip+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:codepostal \""+zip+"\"@fr.\n"+
                 
                 "}";
            
@@ -562,10 +562,10 @@ public class Film {
             String d = coordlat.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+t+" dbfilm:coordlat \""+coordlat+"\"@fr.\n"+
                 
@@ -579,10 +579,10 @@ public class Film {
             String d = coordlong.replaceAll(" ","");
                String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+t+" dbfilm:coordlong \""+coordlong+"\"@fr.\n"+
                 
@@ -596,18 +596,14 @@ public class Film {
             String act = acteur.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
-                "dbfilm:"+act+" ?real dbfilm:"+t+".\n"+
+                "dbfilm:"+act+" dbfilm:jouedans dbfilm:"+t+".\n"+
                 "dbfilm:"+act+" rdfs:label \""+acteur+"\"@fr.\n"+
-                
-                "}\n"+
-                "where {\n"+
-                "?real rdfs:label \"jouedans\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }  
@@ -618,10 +614,10 @@ public class Film {
             String g = genre.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+t+" dbfilm:genre \""+genre+"\"@fr.\n"+
                 
@@ -636,17 +632,12 @@ public class Film {
             String o = origine.replaceAll(" ","");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
-           " INSERT\n" +
+           " INSERT DATA\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?real dbfilm:"+o+"pays.\n"+
-                "dbfilm:"+o+"pays rdfs:label \""+origine+"\"@fr.\n"+
-                
-                "}\n"+
-                "where {\n"+
-                "?real rdfs:label \"apourorigine\"@fr."+
+                "dbfilm:"+t+" dbfilm:apourorigine dbfilm:"+o+".\n"+
                 "}\n";
            
            sparqlClient.update(query);  
@@ -659,7 +650,7 @@ public class Film {
              
              String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
-            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
         
             " SELECT ?titre	?value\n" +
@@ -670,6 +661,7 @@ public class Film {
              
              sparqlClient.select(query);
              
+             return film;
              
          }
          public void setUpdateFilmOntologie(Film f)
@@ -690,7 +682,7 @@ public class Film {
              this.SetOntologieZip(f.titre,f.codePostale);
              
              for (String adresse : f.adresse) {
-                 this.SetOntologieAdresse(f.titre, adresse);
+                 this.SetOntologieAdresse(f.titre, adresse,f.ville);
              }
              for (String acteur :f.acteurs ) 
              {
@@ -702,7 +694,7 @@ public class Film {
              }
              for (String origine :f.origine ) 
              {
-                 this.SetOntologieAteur(f.titre, origine);
+                 this.SetOntologieOrigine(f.titre, origine);
              }
          }
    

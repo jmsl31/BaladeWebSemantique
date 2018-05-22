@@ -49,15 +49,15 @@ public class Main {
            ListFilmComplet.add(film);
            System.out.println("Nombre de film:"+ i++);
         }
-       
+        i=0;
         for (Film film : ListFilmComplet) {
             film.GetFilmInfo();
             film.setUpdateFilmOntologie(film);
+            System.out.println(ListFilmComplet.get(i).titre +" a été ajouté.");
+            i++;
         }
         System.out.println("Nombre de film : " + ListFilmComplet.size());
-        for (int j = 0; j < ListFilmComplet.size(); j++) {
-             System.out.println(ListFilmComplet.get(i).titre);
-        }
+      
         
     }
     

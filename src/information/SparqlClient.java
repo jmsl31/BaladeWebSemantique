@@ -138,7 +138,11 @@ public class SparqlClient {
             nvps.add(new BasicNameValuePair("update", queryString));
             httpPost.setEntity(new UrlEncodedFormEntity(nvps));
             HttpResponse response2 = httpclient.execute(httpPost);
-
+            try {
+                Thread.sleep(500);
+                        } catch (InterruptedException ex) {
+                Logger.getLogger(SparqlClient.class.getName()).log(Level.SEVERE, null, ex);
+            }
             try {
                 HttpEntity entity2 = response2.getEntity();
                 // do something useful with the response body
