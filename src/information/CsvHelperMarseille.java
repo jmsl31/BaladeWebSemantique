@@ -29,6 +29,7 @@ public class CsvHelperMarseille extends CsvFileHelper{
 	    private static final String Movie_Title = "Titre";
 	    private static final String Movie_nb_tournage = "Nombre de Jours  de Tournages";
 	    private static final String Movie_realisateur = "Réalisé par";
+            String titlehold ="";
             
     @Override
     public List<Film> readFile(String fileName) throws FileNotFoundException, IOException {
@@ -51,21 +52,39 @@ public class CsvHelperMarseille extends CsvFileHelper{
                     
                     //Recuperation des enregistrements dans le CSV
 	            List csvRecords = csvFileParser.getRecords(); 	             
-                    
-	            //Lecture des enregistrements du fichier CVS 
+                     Film film = new Film();
+
+                    //Lecture des enregistrements du fichier CVS 
 	            for (int i = 1; i < csvRecords.size(); i++) {
 	                CSVRecord record = (CSVRecord) csvRecords.get(i);
 	                //Creation de l'objet Film
-                        //Film (String adresse, String codePostale, String coordonneeLat, String coordonneeLong, List<String> acteurs) {
-    
-                        Film film = new Film("Marseille",record.get(Movie_Title), 
-                                             "","","","",new ArrayList<String>(),
+                        //String titre, String type, String annee, String note, String duree,
+                        //List<String> genre, String realisateur, String affiche, List<String> origine,
+                        //String resume, String imdbId, String anneeTournage, String nbjoursTournage,
+                        //String adresse, String codePostale, String coordonneeLat, String coordonneeLong, List<String> acteurs
+                        //Split des coordonnées GP
+                        
+                           film.setFilm("Marseille",record.get(Movie_Title), 
+                                             "","","","","",
                                              record.get(Movie_realisateur),"",
-                                             new ArrayList<String>(),"","","",
+                                             "","","","",
                                              record.get(Movie_nb_tournage),"","","","",
-                                             new ArrayList<String>());
-                        ListFilm.add(film);
+                                             "");
+                        System.out.println("Titre hold: "+ titlehold);
+                        System.out.println("Titre hold: "+ film.getTitre());
+                        
+                        if (!(titlehold == film.getTitre()))
+                        {
+                            ListFilm.add(film);
+                            titlehold = film.getTitre();
+                            film = new Film();
+                        }
+                        else
+                        {
+                            film.setAdresse("");
+                        }
                     }
+                   
         } 
 	catch (Exception e) {
 	            System.out.println("Error in CsvFileReader !!!");

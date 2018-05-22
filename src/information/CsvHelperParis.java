@@ -33,6 +33,7 @@ public class CsvHelperParis extends CsvFileHelper{
             private static final String Movie_Coordonnées = "xy";
             private static final String Movie_annéetournage = "date_debut";
             private static final String Movie_type = "type_de_tournage";
+            String titlehold;
             
     @Override
     public List<Film> readFile(String fileName) throws FileNotFoundException, IOException {
@@ -55,6 +56,7 @@ public class CsvHelperParis extends CsvFileHelper{
                     
                     //Recuperation des enregistrements dans le CSV
 	            List csvRecords = csvFileParser.getRecords(); 	             
+                     Film film = new Film();
                     
 	            //Lecture des enregistrements du fichier CVS 
 	            for (int i = 1; i < csvRecords.size(); i++) {
@@ -68,11 +70,24 @@ public class CsvHelperParis extends CsvFileHelper{
                         
                         String[] coordonne = record.get(Movie_Coordonnées).split(",");
                         
-                        Film film = new Film("Paris",record.get(Movie_Title),record.get(Movie_type),"","","",
-                                             new ArrayList<String>(),record.get(Movie_realisateur),"",new ArrayList<String>(),
+                           film.setFilm("Paris",record.get(Movie_Title),record.get(Movie_type),"","","",
+                                             "",record.get(Movie_realisateur),"","",
                                              "","",record.get(Movie_annéetournage),"",
-                                             record.get(Movie_adresse),record.get(Movie_codePostale),coordonne[0],coordonne[1],new ArrayList<String>());
-                        ListFilm.add(film);
+                                             record.get(Movie_adresse),record.get(Movie_codePostale),coordonne[0],coordonne[1],"");
+                        
+                         System.out.println("Titre hold: "+ titlehold);
+                        System.out.println("Titre hold: "+ film.getTitre());
+                        
+                        if (!(titlehold == film.getTitre()))
+                        {
+                            ListFilm.add(film);
+                            titlehold = film.getTitre();
+                            film = new Film();
+                        }
+                        else
+                        {
+                            film.setAdresse(record.get(Movie_adresse));
+                        }
                     }
         } 
 	catch (Exception e) {

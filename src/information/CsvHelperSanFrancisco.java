@@ -28,6 +28,7 @@ public class CsvHelperSanFrancisco extends CsvFileHelper{
             private static final String Movie_Title = "Title";
 	    private static final String Movie_realisateur = "Director";
             private static final String Movie_adresse = "Locations";
+            String titlehold="";
      @Override
     public List<Film> readFile(String fileName) throws FileNotFoundException, IOException {
     
@@ -68,10 +69,15 @@ public class CsvHelperSanFrancisco extends CsvFileHelper{
                                              "","","","",
                                              record.get(Movie_adresse),"","","","");
                         
-                        if (!film.getTitlehold().contains(film.getTitre()))
+                         if (!(titlehold == film.getTitre()))
                         {
                             ListFilm.add(film);
+                            titlehold = film.getTitre();
                             film = new Film();
+                        }
+                        else
+                        {
+                            film.setAdresse(record.get(Movie_adresse));
                         }
                         
                     }

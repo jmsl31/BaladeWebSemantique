@@ -114,3 +114,29 @@ INSERT
 where {
      ?real rdfs:label "apourorigine"@fr.
 }
+
+SELECT  distinct *
+WHERE {
+  ?subject dbfilm:a_pour	?lieu.
+  ?subject rdfs:label ?titre.
+  ?subject ?pred ?x.
+  
+  
+}
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        
+INSERT
+{
+dbfilm:RedSparrow dbfilm:apour dbfilm:LosAngeles.
+dbfilm:RedSparrow dbfilm:titre "RedSparrow" .
+dbfilm:LosAngeles rdfs:label "LosAngeles".
+}
+
+INSERT
+{
+dbfilm:MatthiasSchoenaerts dbfilm:jouedans dbfilm:RedSparrow.
+dbfilm:MatthiasSchoenaerts rdfs:label "Matthias Schoenaerts"@fr.
+}

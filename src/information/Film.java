@@ -44,7 +44,7 @@ public class Film {
         List<String> acteurs;
         private String baseUrl = "http://www.omdbapi.com/?y=&plot=short&r=json&apikey=b17302a6&t=";//base de l'url correspondant à la requête get qui devra être compléter avec le nom du film à considérer
         SparqlClient sparqlClient;
-        String titlehold ;
+        
         
     public Film() {
         this.titre = "";
@@ -66,17 +66,9 @@ public class Film {
         this.coordonneeLong = "";
         this.acteurs = new ArrayList<>();
         sparqlClient = new SparqlClient("localhost:3030/Balade");
-        titlehold ="";
+        
     }
-
-    public String getTitlehold() {
-        return titlehold;
-    }
-
-    public void setTitlehold(String titlehold) {
-        this.titlehold = titlehold;
-    }
-
+    
     public Film(String ville,String titre, String type, String annee, String note, String duree, List<String> genre, String realisateur, String affiche, List<String> origine, String resume, String imdbId, String anneeTournage, String nbjoursTournage, List<String> adresse, String codePostale, String coordonneeLat, String coordonneeLong, List<String> acteurs) {
         this.ville = ville;
         this.titre = titre;
@@ -99,16 +91,12 @@ public class Film {
         this.acteurs = acteurs;
         sparqlClient = new SparqlClient("localhost:3030/Balade");
     }
-    public Film setFilm(String ville,String titre, String type, String annee, String note, String duree, String genre,
+    
+    public void setFilm(String ville,String titre, String type, String annee, String note, String duree, String genre,
                         String realisateur, String affiche, String origine, String resume, String imdbId,
-                        String anneeTournage, String nbjoursTournage, String adresse, String codePostale, String coordonneeLat, String coordonneeLong, String acteurs)
+                        String anneeTournage, String nbjoursTournage, String adresse, String codePostale,
+                        String coordonneeLat, String coordonneeLong, String acteurs)
     {
-        if (titlehold.contains(titre))
-        {
-            this.setAdresse(adresse);
-        }
-        else
-        {
             this.setVille(ville);
             this.setTitre(titre);
             this.setType(type);
@@ -128,9 +116,7 @@ public class Film {
             this.setCoordonneeLat(coordonneeLat);
             this.setCoordonneeLong(coordonneeLong);
             this.setActeurs(acteurs);
-            titlehold = titre;
-        }
-        
+       
     }
 
     public String getVille() {
@@ -355,13 +341,10 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?real dbfilm:"+l+".\n"+
-                "dbfilm:"+t+" rdfs:label \""+titre+"\".\n"+
+                "dbfilm:"+t+" dbfilm:a_pour dbfilm:"+l+".\n"+
+                "dbfilm:"+t+" dbfilm:titre \""+titre+"\".\n"+
                 "dbfilm:"+l+" rdfs:label \""+lieu+"\"@fr.\n"+
-                "}\n"+
-                "where {\n"+
-                "?real rdfs:label \"a pour lieu\"@fr.\n"+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);
                         
@@ -377,12 +360,8 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?type dbfilm:"+t+"type.\n"+
-                "dbfilm:"+t+"type rdfs:label \""+type+"\"@fr.\n"+
-                "}\n"+
-                "where {\n"+
-                "?type rdfs:label \"apourtype\"@fr."+
-                "}\n";
+                "dbfilm:"+t+" dbfilm:type \""+type+"\"@fr.\n"+
+                "}";
            
            sparqlClient.update(query);
         }
@@ -398,9 +377,7 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" dbfilm:realiseen dbfilm:"+t+"date_tournage.\n"+
-                "dbfilm:"+t+"date_tournage@fr rdfs:label \""+datetournage+"\".\n"+
-                
+                "dbfilm:"+t+" dbfilm:datetournage \""+datetournage+"\".\n"+
                 "}\n";
            
            sparqlClient.update(query);
@@ -417,13 +394,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?sortie dbfilm:"+t+"annee.\n"+
-                "dbfilm:"+t+"annee rdfs:label \""+datesortie+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:annee \""+datesortie+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?sortie rdfs:label \"sortieen\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);   
         
@@ -439,13 +412,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?note dbfilm:"+t+"note.\n"+
-                "dbfilm:"+t+"note rdfs:label \""+note+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:note \""+note+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?note rdfs:label \"apournote\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);    
         }
@@ -460,13 +429,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?duree dbfilm:"+titre+"duree.\n"+
-                "dbfilm:"+t+"duree rdfs:label \""+duree+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:duree \""+duree+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?duree rdfs:label \"apourduree\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }
@@ -484,10 +449,7 @@ public class Film {
                 "dbfilm:"+t+" ?realis dbfilm:"+t+"realisateur.\n"+
                 "dbfilm:"+t+"realisateur rdfs:label \""+realisateur+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?realis rdfs:label \"estrealise\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }
@@ -502,13 +464,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?affiche dbfilm:"+t+"affiche.\n"+
-                "dbfilm:"+t+"affiche rdfs:label \""+affiche+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:affiche \""+affiche+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?affiche rdfs:label \"apouraffiche\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }
@@ -523,13 +481,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?resume dbfilm:"+t+"resume.\n"+
-                "dbfilm:"+t+"resume rdfs:label \""+resume+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:resume \""+resume+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?resume rdfs:label \"apouresume\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }
@@ -544,13 +498,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?imdbId dbfilm:"+t+"imdbId.\n"+
-                "dbfilm:"+t+"imdbId rdfs:label \""+Id+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:imdbid \""+Id+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?imdbId rdfs:label \"apourimdbId\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }
@@ -565,13 +515,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?nbjour dbfilm:"+t+"Nbjour.\n"+
-                "dbfilm:"+t+"Nbjour rdfs:label \""+Nb+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:NbJoursTournagel \""+Nb+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?nbjour rdfs:label \"atournerjour\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }
@@ -586,13 +532,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?adresse dbfilm:"+t+"adresse.\n"+
-                "dbfilm:"+t+"adresse rdfs:label \""+adresse+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:adresse \""+adresse+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?adresse rdfs:label \"apouradresse\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }
@@ -608,13 +550,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?zip dbfilm:"+t+"zip.\n"+
-                "dbfilm:"+t+"zip rdfs:label \""+zip+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:ZipCodeTournage \""+zip+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?zip rdfs:label \"apourzip\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }
@@ -629,13 +567,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?coordlat dbfilm:"+t+"coordlat.\n"+
-                "dbfilm:"+t+"coordlat rdfs:label \""+coordlat+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:coordlat \""+coordlat+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?cordlat rdfs:label \"apourlat\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }
@@ -650,13 +584,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?coordlong dbfilm:"+t+"coordlong.\n"+
-                "dbfilm:"+t+"coordlong rdfs:label \""+coordlong+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:coordlong \""+coordlong+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?coordlong rdfs:label \"apourlong\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }
@@ -693,13 +623,9 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?real dbfilm:"+g+".\n"+
-                "dbfilm:"+g+" rdfs:label \""+genre+"\"@fr.\n"+
+                "dbfilm:"+t+" dbfilm:genre \""+genre+"\"@fr.\n"+
                 
-                "}\n"+
-                "where {\n"+
-                "?real rdfs:label \"apourgenre\"@fr."+
-                "}\n";
+                "}";
            
            sparqlClient.update(query);  
          }  
@@ -715,8 +641,8 @@ public class Film {
         
            " INSERT\n" +
                 "{\n"+
-                "dbfilm:"+t+" ?real dbfilm:"+o+".\n"+
-                "dbfilm:"+o+" rdfs:label \""+origine+"\"@fr.\n"+
+                "dbfilm:"+t+" ?real dbfilm:"+o+"pays.\n"+
+                "dbfilm:"+o+"pays rdfs:label \""+origine+"\"@fr.\n"+
                 
                 "}\n"+
                 "where {\n"+
@@ -725,10 +651,30 @@ public class Film {
            
            sparqlClient.update(query);  
          }  
+          
+         public JSONObject getFilmLieu(String Lieu)
+                 
+         {
+             JSONObject  film = new JSONObject();
+             
+             String query =  "PREFIX : </Balade#>\n"+
+            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johann.meissl/ontologies/2018/0/untitled-ontology-2#>\n"+
+            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
+        
+            " SELECT ?titre	?value\n" +
+            "WHERE {\n" +
+            "  ?subject dbfilm:a_pour	dbfilm:"+Lieu+".\n" +
+            "  ?subject rdfs:label ?titre.\n" +
+            "}";
+             
+             sparqlClient.select(query);
+             
+             
+         }
          public void setUpdateFilmOntologie(Film f)
          {
              this.SetOntologieTitreLieu(f.titre,f.ville);
-             this.SetOntologieAdresse(f.titre,f.adresse);
              this.SetOntologieAffiche(f.titre,f.affiche);
              this.SetOntologieAnneeSortie(f.titre,f.annee);
              this.SetOntologieCoordLat(f.titre,f.coordonneeLat);
@@ -743,6 +689,9 @@ public class Film {
              this.SetOntologieType(f.titre,f.type);
              this.SetOntologieZip(f.titre,f.codePostale);
              
+             for (String adresse : f.adresse) {
+                 this.SetOntologieAdresse(f.titre, adresse);
+             }
              for (String acteur :f.acteurs ) 
              {
                  this.SetOntologieAteur(f.titre, acteur);
