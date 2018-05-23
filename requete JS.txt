@@ -1,0 +1,77 @@
+// requete JS
+
+
+//titre et URI.
+
+select distinct *
+where
+{
+ 		?x dbfilm:sederoule dbfilm:Marseille.
+  		?x dbfilm:titre ?titre.
+}
+
+
+// Coordonnées GPS
+
+select distinct *
+where
+{
+  dbfilm:COUPDEFOUDREAJAIPUR dbfilm:coordlat ?latittude.
+  dbfilm:COUPDEFOUDREAJAIPUR dbfilm:coordlong ?longittude.
+}
+
+
+// selection info/titre.
+
+select distinct *
+where
+{
+  ?x dbfilm:sederoule ?z.
+  ?z rdfs:label ?ville.
+  ?x dbfilm:adressetournage ?adresse.
+  ?x dbfilm:titre ?titre.
+  ?x dbfilm:coordlat ?latittude.
+  ?x dbfilm:coordlong ?longittude.
+}
+
+
+// info ville
+
+select distinct *
+where
+{
+  dbfilm:Americana ?property ?value.
+}
+
+prefix dbr: <http://dbpedia.org/resource/>
+
+select distinct ?population ?resume
+
+where {
+
+dbr:Montpellier dbo:populationTotal ?population. 
+dbr:Montpellier dbo:abstract ?resume.
+FILTER(lang(?resume)= "fr")
+}
+
+prefix dbr: <http://dbpedia.org/resource/>
+
+select distinct ?population ?resume
+
+where {
+
+dbr:Paris dbo:populationTotal ?population. 
+dbr:Paris dbo:abstract ?resume.
+FILTER(lang(?resume)= "fr")
+}
+
+prefix dbr: <http://dbpedia.org/resource/>
+
+select distinct ?population ?resume
+
+where {
+
+dbr:San_Francisco dbo:populationTotal ?population. 
+dbr:San_Francisco dbo:abstract ?resume.
+FILTER(lang(?resume)= "fr")
+}
