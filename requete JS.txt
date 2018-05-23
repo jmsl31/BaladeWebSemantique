@@ -77,3 +77,14 @@ dbr:San_Francisco dbo:populationTotal ?population.
 dbr:San_Francisco dbo:abstract ?resume.
 FILTER(lang(?resume)= "fr")
 }
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+prefix dbr: <http://dbpedia.org/resource/>
+prefix dbo: <http://dbpedia.org/ontology/>
+
+INSERT DATA{
+ dbfilm:Paris owl:sameas dbr:Paris
+}

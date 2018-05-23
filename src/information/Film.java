@@ -5,6 +5,7 @@
  */
 package information;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,6 +14,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import org.json.JSONObject;
 
 
@@ -643,7 +645,7 @@ public class Film {
            sparqlClient.update(query);  
          }  
           
-         public JSONObject getFilmLieu(String Lieu)
+         public JSONObject getFilmLieu(String Lieu) 
                  
          {
              JSONObject  film = new JSONObject();
@@ -664,6 +666,30 @@ public class Film {
              return film;
              
          }
+          public Iterable<Map<String, String>> getLieu(String Lieu)
+                 
+         {
+             Iterable<Map<String, String>>  film ;
+             
+             String query =            
+             "PREFIX : </Balade#>\n"+
+             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
+             "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
+            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+         
+            "prefix dbr: <http://dbpedia.org/resource/>\n"+
+            "prefix dbo: <http://dbpedia.org/ontology/>\n"+
+            "select distinct ?population ?resume \n+"+
+            "where {\n"+
+            "dbr:Montpellier dbo:populationTotal ?population. \n"+
+            "dbr:Montpellier dbo:abstract ?resume.\n"+
+            "FILTER(lang(?resume)= \"fr\")\n"+
+            "}";
+            film =  sparqlClient.select(query);
+             
+             return film;
+             
+         }
+         
          public void setUpdateFilmOntologie(Film f)
          {
              this.SetOntologieTitreLieu(f.titre,f.ville);

@@ -1,0 +1,2402 @@
+@prefix :      <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+:GregKinnear  a     owl:NamedIndividual ;
+        rdfs:label  "Greg Kinnear"@fr ;
+        :jouedans   :ASmileLikeYours .
+
+:OliverPlatt  a     owl:NamedIndividual ;
+        rdfs:label  " Oliver Platt"@fr ;
+        :jouedans   :BicentennialMan .
+
+:apourrealisateur  a        owl:ObjectProperty ;
+        rdfs:comment        "a pour realisateur"@fr , "apourrealisateur"@fr ;
+        rdfs:domain         :Film ;
+        rdfs:range          :realisateur ;
+        rdfs:subPropertyOf  owl:topObjectProperty ;
+        owl:inverseOf       :arealise .
+
+:Biography  a       owl:NamedIndividual ;
+        rdfs:label  " Biography"@fr , "Biography"@fr ;
+        :jouedans   :BirdmanofAlcatraz , :BirthoftheDragon , :CEZANNEETMOI , :BigEyes .
+
+:Jayendra  a        owl:NamedIndividual ;
+        rdfs:label  "Jayendra" .
+
+:KathSoucie  a      owl:NamedIndividual ;
+        rdfs:label  " Kath Soucie"@fr ;
+        :jouedans   :AttackoftheKillerTomatoes .
+
+:SandraCervik  a    owl:NamedIndividual ;
+        rdfs:label  "Sandra Cervik"@fr ;
+        :jouedans   :CHUZPE .
+
+:ETERNITE  a              owl:NamedIndividual ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  "1"@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :Marseille ;
+        :titre            "ETERNITE" ;
+        :type             ""@fr .
+
+:JoshLucas  a       owl:NamedIndividual ;
+        rdfs:label  " Josh Lucas"@fr ;
+        :jouedans   :BigSur .
+
+:ASmileLikeYours  a       owl:NamedIndividual ;
+        :adressetournage  "Hills Brothers Plaza (Embarcadero at Harrison Street)" , "75 California Street" , "Grace Cathedral Episcopal Church (1100 California Street)" , "San Francisco International Airport" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMDMyMWQxZDAtMjE1Yi00ZDAzLWE1MjQtZWQwYjNmNmIyZTYyXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_SX300.jpg"@fr ;
+        :annee            "1997"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "98 " ;
+        :imdbid           "tt0120151"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "4.8"@fr ;
+        :resume           "Greg Kinnear plays a carriage-shy husband in a romantic comedy about a couple trying to conceive a child."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "A Smile Like Yours" , "A Smile Like Yours " ;
+        :type             ""@fr .
+
+:RogerMoore  a      owl:NamedIndividual ;
+        rdfs:label  "Roger Moore"@fr ;
+        :jouedans   :AViewtoaKill .
+
+:Ponijao  a         owl:NamedIndividual ;
+        rdfs:label  " Ponijao"@fr ;
+        :jouedans   :Babies .
+
+:RobinWilliams  a   owl:NamedIndividual ;
+        rdfs:label  "Robin Williams"@fr ;
+        :jouedans   :BicentennialMan .
+
+:BruceDavison  a    owl:NamedIndividual ;
+        rdfs:label  " Bruce Davison"@fr ;
+        :jouedans   :LOVELOCKS .
+
+:KrystenRitter  a   owl:NamedIndividual ;
+        rdfs:label  " Krysten Ritter"@fr ;
+        :jouedans   :BigEyes .
+
+:sederoule  a               owl:ObjectProperty ;
+        rdfs:comment        "sederoule"@fr , "se deroule"@fr ;
+        rdfs:domain         :Film ;
+        rdfs:range          :lieu ;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+:Film   a           owl:Class ;
+        rdfs:label  "movie" , "film" .
+
+:NicholasHoult  a   owl:NamedIndividual ;
+        rdfs:label  " Nicholas Hoult"@fr ;
+        :jouedans   :AboutaBoy .
+
+:ChristophWaltz  a  owl:NamedIndividual ;
+        rdfs:label  " Christoph Waltz"@fr ;
+        :jouedans   :BigEyes .
+
+:GlenCaspillo  a    owl:NamedIndividual ;
+        rdfs:label  " Glen Caspillo"@fr ;
+        :jouedans   :BlueJasmine .
+
+:DavidCarradine  a  owl:NamedIndividual ;
+        rdfs:label  "David Carradine"@fr ;
+        :jouedans   :Americana .
+
+:SeanPenn  a        owl:NamedIndividual ;
+        rdfs:label  " Sean Penn"@fr ;
+        :jouedans   :CasualtiesofWar .
+
+:AnneBaxter  a      owl:NamedIndividual ;
+        rdfs:label  " Anne Baxter"@fr ;
+        :jouedans   :AllAboutEve .
+
+:RachelBerney  a    owl:NamedIndividual ;
+        rdfs:label  "Rachel Berney"@fr ;
+        :jouedans   :HoursonCraigslist .
+
+:BlakeLively  a     owl:NamedIndividual ;
+        rdfs:label  "Blake Lively"@fr ;
+        :jouedans   :AgeofAdaline .
+
+:Cherish  a               owl:NamedIndividual ;
+        :adressetournage  "387 Fair Oaks at 25th Street" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMTM3MDkzMDY4Ml5BMl5BanBnXkFtZTcwNDIxMzEzMQ@@._V1_SX300.jpg"@fr ;
+        :annee            "2002"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "99 " ;
+        :imdbid           "tt0298798"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.8"@fr ;
+        :resume           "After a martini-induced rampage, a fantasy-prone young woman is placed under house arrest."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Cherish" ;
+        :type             ""@fr .
+
+:datetournage  a            owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:label          "datetournage"@fr ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:BetteMidler  a     owl:NamedIndividual ;
+        rdfs:label  "Bette Midler"@fr ;
+        :jouedans   :Beaches .
+
+:TaraReid  a        owl:NamedIndividual ;
+        rdfs:label  " Tara Reid"@fr ;
+        :jouedans   :AroundtheFire .
+
+:contient  a                owl:ObjectProperty ;
+        rdfs:comment        "contient"@fr ;
+        rdfs:domain         :pays ;
+        rdfs:range          :ville ;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+:Yugoslavia  a  owl:NamedIndividual .
+
+:MarcHayashi  a     owl:NamedIndividual ;
+        rdfs:label  " Marc Hayashi"@fr ;
+        :jouedans   :ChanisMissing .
+
+:FacesofDeath  a          owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMDMxYmMyMjMtMzIyZi00ZGFmLWE3MTYtNWM3MDM4OGRmYjQ2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"@fr ;
+        :annee            "1978"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "105 " ;
+        :imdbid           "tt0077533"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "4.0"@fr ;
+        :resume           "A collection of death scenes, ranging from TV-material to home-made super-8 movies The common factor is death by some means."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Faces of Death" ;
+        :type             ""@fr .
+
+:BeeSeason  a             owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMTIxODcyMjI2MV5BMl5BanBnXkFtZTcwMjY0MjEzMQ@@._V1_SX300.jpg"@fr ;
+        :annee            "2005"@fr ;
+        :apourorigine     :USA , :Germany ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "104 " ;
+        :imdbid           "tt0387059"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "5.5"@fr ;
+        :resume           "A wife and mother begins a downward emotional spiral, as her husband avoids their collapsing marriage by immersing himself in his 11 year-old daughter's quest to become a spelling bee champion."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Bee Season" ;
+        :type             ""@fr .
+
+:DonHarvey  a       owl:NamedIndividual ;
+        rdfs:label  " Don Harvey"@fr ;
+        :jouedans   :CasualtiesofWar .
+
+:StanyaKahn  a      owl:NamedIndividual ;
+        rdfs:label  " Stanya Kahn"@fr ;
+        :jouedans   :ByHookorByCrook .
+
+:resume  a                  owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:label          "resume"@fr ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:Beaches  a               owl:NamedIndividual ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMTQ4MjA0NDcyN15BMl5BanBnXkFtZTgwNDgzOTgzMTE@._V1_SX300.jpg"@fr ;
+        :annee            "1988"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "123 " ;
+        :imdbid           "tt0094715"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.8"@fr ;
+        :resume           "A privileged rich debutante and a cynical struggling entertainer share a turbulent, but strong childhood friendship over the years."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Beaches" ;
+        :type             ""@fr .
+
+:SteveMcQueen  a    owl:NamedIndividual ;
+        rdfs:label  "Steve McQueen"@fr ;
+        :jouedans   :Bullitt .
+
+:CelesteHolm  a     owl:NamedIndividual ;
+        rdfs:label  " Celeste Holm"@fr ;
+        :jouedans   :AllAboutEve .
+
+:RonHoward  a       owl:NamedIndividual ;
+        rdfs:label  " Ron Howard"@fr ;
+        :jouedans   :AmericanGraffiti .
+
+:KimCattrall  a     owl:NamedIndividual ;
+        rdfs:label  " Kim Cattrall"@fr ;
+        :jouedans   :BigTroubleinLittleChina .
+
+:ChristianBujeau  a  owl:NamedIndividual ;
+        rdfs:label  " Christian Bujeau"@fr ;
+        :jouedans   :LAVACHE .
+
+:DonGordon  a       owl:NamedIndividual ;
+        rdfs:label  " Don Gordon"@fr ;
+        :jouedans   :Bullitt .
+
+:FrancescaEastwood  a  owl:NamedIndividual ;
+        rdfs:label  "Francesca Eastwood"@fr ;
+        :jouedans   :CardinalX .
+
+:EvangelineLilly  a  owl:NamedIndividual ;
+        rdfs:label  " Evangeline Lilly"@fr ;
+        :jouedans   :Ant-Man .
+
+:MichaelCarr  a     owl:NamedIndividual ;
+        rdfs:label  "Michael Carr"@fr ;
+        :jouedans   :FacesofDeath .
+
+:SharonSmall  a     owl:NamedIndividual ;
+        rdfs:label  " Sharon Small"@fr ;
+        :jouedans   :AboutaBoy .
+
+:JohnAstin  a       owl:NamedIndividual ;
+        rdfs:label  "John Astin"@fr ;
+        :jouedans   :AttackoftheKillerTomatoes .
+
+:MikeCurtis  a      owl:NamedIndividual ;
+        rdfs:label  " Mike Curtis"@fr ;
+        :jouedans   :HoursonCraigslist .
+
+:Documentary  a     owl:NamedIndividual ;
+        rdfs:label  "Documentary"@fr ;
+        :jouedans   :FacesofDeath , :Babies , :HoursonCraigslist , :Hours .
+
+:NithyaMenon  a     owl:NamedIndividual ;
+        rdfs:label  " Nithya Menon"@fr .
+
+:Hattie  a          owl:NamedIndividual ;
+        rdfs:label  " Hattie"@fr ;
+        :jouedans   :Babies .
+
+:DannyAiello  a     owl:NamedIndividual ;
+        rdfs:label  " Danny Aiello"@fr ;
+        :jouedans   :ChuChuandthePhillyFlash .
+
+:Babies  a                owl:NamedIndividual ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMTI3MjA4OTE1MF5BMl5BanBnXkFtZTcwNDk3NjYwMw@@._V1_SX300.jpg"@fr ;
+        :annee            "2010"@fr ;
+        :apourorigine     :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "79 " ;
+        :imdbid           "tt1020938"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.1"@fr ;
+        :resume           "A look at one year in the life of four babies from around the world, from Mongolia to Namibia to San Francisco to Tokyo."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Babies" ;
+        :type             ""@fr .
+
+:MyrnaLoy  a        owl:NamedIndividual ;
+        rdfs:label  " Myrna Loy"@fr ;
+        :jouedans   :AftertheThinMan .
+
+:EvaMayer  a        owl:NamedIndividual ;
+        rdfs:label  " Eva Mayer"@fr ;
+        :jouedans   :CHUZPE .
+
+:HoursonCraigslist  a     owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI0Mzc4OTQwOV5BMl5BanBnXkFtZTcwNDY0NjIzMQ@@._V1_SX300.jpg"@fr ;
+        :annee            "2005"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "82 " ;
+        :imdbid           "tt0377029"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.5"@fr ;
+        :resume           "This is about Craig Newmark popular classified ads website and the diverse postings that occur on the site in a single day."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "24 Hours on Craigslist" ;
+        :type             ""@fr .
+
+:SofianKhammes  a   owl:NamedIndividual ;
+        rdfs:label  "Sofian Khammes"@fr ;
+        :jouedans   :CHOUF .
+
+:GeorgeDzundza  a   owl:NamedIndividual ;
+        rdfs:label  " George Dzundza"@fr ;
+        :jouedans   :BasicInstinct .
+
+:MichaelGreene  a   owl:NamedIndividual ;
+        rdfs:label  " Michael Greene"@fr ;
+        :jouedans   :Americana .
+
+:TOURDEFRANCE  a          owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BZGZlZDUwNDUtZDg2Zi00ZGVkLTkyNjQtZmFmZjNlMjg0MThlXkEyXkFqcGdeQXVyMjQ3NzUxOTM@._V1_SX300.jpg"@fr ;
+        :annee            "2016"@fr ;
+        :apourorigine     :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "95 " ;
+        :imdbid           "tt5189440"@fr ;
+        :nbjourstournage  "7"@fr ;
+        :note             "5.8"@fr ;
+        :resume           "Far'Hook is a twenty-year-old rapper. Following a settling of scores, he's obliged to leave Paris and lay low for awhile. His producer, Bilal, suggests that Far'Hook take his place ..."@fr ;
+        :sederoule        :Marseille ;
+        :titre            "TOUR DE FRANCE" ;
+        :type             ""@fr .
+
+:JamesStewart  a    owl:NamedIndividual ;
+        rdfs:label  " James Stewart"@fr ;
+        :jouedans   :AftertheThinMan .
+
+:FouedNabba  a      owl:NamedIndividual ;
+        rdfs:label  " Foued Nabba"@fr ;
+        :jouedans   :CHOUF .
+
+:LesleyAnnWarren  a  owl:NamedIndividual ;
+        rdfs:label  " Lesley Ann Warren"@fr ;
+        :jouedans   :Burglar .
+
+:JonathanBanks  a   owl:NamedIndividual ;
+        rdfs:label  " Jonathan Banks"@fr ;
+        :jouedans   :NADIA .
+
+:VINCENTETLAFINDUMONDE
+        a                 owl:NamedIndividual ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  "2"@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :Marseille ;
+        :titre            "VINCENT ET LA FIN DU MONDE" ;
+        :type             ""@fr .
+
+:SeanAstin  a       owl:NamedIndividual ;
+        rdfs:label  " Sean Astin"@fr ;
+        :jouedans   :FirstDates .
+
+:longmetrage  a              owl:Class ;
+        rdfs:label           "longmetrage"@fr ;
+        owl:equivalentClass  [ a                   owl:Class ;
+                               owl:intersectionOf  ( :Film
+                                                     [ a                   owl:Restriction ;
+                                                       owl:onProperty      :duree ;
+                                                       owl:someValuesFrom  [ a                     rdfs:Datatype ;
+                                                                             owl:onDatatype        xsd:int ;
+                                                                             owl:withRestrictions  ( [ xsd:minExclusive  59 ]
+                                                                                                   )
+                                                                           ]
+                                                     ]
+                                                   )
+                             ] .
+
+:ONEWAYTICKET  a          owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BODk1YmNhMzktZDZkNy00MTQ1LTlkZTItNGY5OTYzNzM3M2JmXkEyXkFqcGdeQXVyMjg5MDAyNTk@._V1_SX300.jpg"@fr ;
+        :annee            "2001"@fr ;
+        :apourorigine     :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "90 " ;
+        :imdbid           "tt0242981"@fr ;
+        :nbjourstournage  "1"@fr ;
+        :note             "4.8"@fr ;
+        :sederoule        :Marseille ;
+        :titre            "ONE WAY TICKET" ;
+        :type             ""@fr .
+
+:DennisDun  a       owl:NamedIndividual ;
+        rdfs:label  " Dennis Dun"@fr ;
+        :jouedans   :BigTroubleinLittleChina .
+
+:LindsayCrouse  a   owl:NamedIndividual ;
+        rdfs:label  " Lindsay Crouse"@fr ;
+        :jouedans   :Cherish .
+
+:LouiseGrinberg  a  owl:NamedIndividual ;
+        rdfs:label  " Louise Grinberg"@fr ;
+        :jouedans   :TOURDEFRANCE .
+
+:MiriamShor  a      owl:NamedIndividual ;
+        rdfs:label  " Miriam Shor"@fr ;
+        :jouedans   :Bedazzled .
+
+:EdwardG.Robinson  a  owl:NamedIndividual ;
+        rdfs:label  " Edward G. Robinson"@fr ;
+        :jouedans   :BarbaryCoast .
+
+:MiriamHopkins  a   owl:NamedIndividual ;
+        rdfs:label  "Miriam Hopkins"@fr ;
+        :jouedans   :BarbaryCoast .
+
+:WilliamPowell  a   owl:NamedIndividual ;
+        rdfs:label  "William Powell"@fr ;
+        :jouedans   :AftertheThinMan .
+
+:type   a                   owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:label          "type"@fr ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:Chance-Season1ep103  a   owl:NamedIndividual ;
+        :adressetournage  "60 Potomac" , "Laguna Honda Hospital" , "Forrest Hill Muni Station" , "350 Santa Ana Ave." , "The Drew School, 2901 California" , "San Francisco Art Institute, 800 Chestnut" , "San Bruno and Alameda" , "60 Leavenworth St." , "878-898 Chestnut St." , "17th and Arkansas" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance- Season 1 ep103" ;
+        :type             ""@fr .
+
+:ErinMoriarty  a    owl:NamedIndividual ;
+        rdfs:label  " Erin Moriarty"@fr ;
+        :jouedans   :Hours .
+
+:JackWarden  a      owl:NamedIndividual ;
+        rdfs:label  " Jack Warden"@fr ;
+        :jouedans   :ChuChuandthePhillyFlash .
+
+:ElisaDonovan  a    owl:NamedIndividual ;
+        rdfs:label  " Elisa Donovan"@fr ;
+        :jouedans   :CardinalX .
+
+:jouedans  a                owl:ObjectProperty ;
+        rdfs:comment        "jour dans"@fr , "jouedans"@fr ;
+        rdfs:domain         :acteur ;
+        rdfs:range          :Film ;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+:RobinTunney  a     owl:NamedIndividual ;
+        rdfs:label  " Robin Tunney"@fr ;
+        :jouedans   :Cherish .
+
+:CandiceBergen  a   owl:NamedIndividual ;
+        rdfs:label  " Candice Bergen"@fr ;
+        :jouedans   :ANightFullofRain .
+
+:BobcatGoldthwait  a  owl:NamedIndividual ;
+        rdfs:label  " Bobcat Goldthwait"@fr ;
+        :jouedans   :Burglar .
+
+:UK     a       owl:NamedIndividual .
+
+:Sci-Fi  a          owl:NamedIndividual ;
+        rdfs:label  " Sci-Fi"@fr ;
+        :jouedans   :AttackoftheKillerTomatoes , :BicentennialMan .
+
+:Mystery  a         owl:NamedIndividual ;
+        rdfs:label  " Mystery"@fr ;
+        :jouedans   :ChanisMissing , :BasicInstinct , :AftertheThinMan , :Bullitt .
+
+:COUPDEFOUDREAJAIPUR  a   owl:NamedIndividual ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       "75008"@fr ;
+        :coordlat         "48.875273"@fr , "48.876236"@fr , "48.875605"@fr , "48.878256"@fr ;
+        :coordlong        " 2.320483"@fr , " 2.319789"@fr , " 2.319672"@fr , " 2.320229"@fr ;
+        :datetournage     "2016-03-31" ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :Paris ;
+        :titre            "COUP DE FOUDRE A JAIPUR" ;
+        :type             "TELEFILM"@fr .
+
+:HughGrant  a       owl:NamedIndividual ;
+        rdfs:label  "Hugh Grant"@fr ;
+        :jouedans   :AboutaBoy .
+
+:BarbaraSchulz  a   owl:NamedIndividual ;
+        rdfs:label  " Barbara Schulz"@fr ;
+        :jouedans   :ONEWAYTICKET .
+
+:Chance-Season1ep107  a   owl:NamedIndividual ;
+        :adressetournage  "60 Potomac" , "145 Barlett St." , "1461 Page St." , "1958 Valencia St." , "157 Commonwealth" , "Buena Vista betweeen Upper Terrace and Java St." ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance- Season 1 ep107" ;
+        :type             ""@fr .
+
+:JamesHong  a       owl:NamedIndividual ;
+        rdfs:label  " James Hong"@fr ;
+        :jouedans   :BigTroubleinLittleChina .
+
+:PaulRudd  a        owl:NamedIndividual ;
+        rdfs:label  "Paul Rudd"@fr ;
+        :jouedans   :Ant-Man .
+
+:CHOUF  a                 owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BNTA5ZTI2MTktMmMzYy00NjA2LThiNmEtOWUyOTEyMDM0MTAyXkEyXkFqcGdeQXVyMjA0NzcwMjI@._V1_SX300.jpg"@fr ;
+        :annee            "2016"@fr ;
+        :apourorigine     :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "108 " ;
+        :imdbid           "tt5078274"@fr ;
+        :nbjourstournage  "47"@fr ;
+        :note             "6.5"@fr ;
+        :sederoule        :Marseille ;
+        :titre            "CHOUF" ;
+        :type             ""@fr .
+
+:BradHunt  a        owl:NamedIndividual ;
+        rdfs:label  "Brad Hunt"@fr ;
+        :jouedans   :Cherish .
+
+:KateBosworth  a    owl:NamedIndividual ;
+        rdfs:label  " Kate Bosworth"@fr ;
+        :jouedans   :BigSur .
+
+:LOVELOCKS  a             owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BYzZjYmE2ODktZTliOC00MTI3LWJiOGUtNDQxZjIzZTQzOGM3XkEyXkFqcGdeQXVyNzMzNjM2Nzc@._V1_SX300.jpg"@fr ;
+        :annee            "2017"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       "75001"@fr , "75006"@fr ;
+        :coordlat         "48.857914"@fr , "48.856822"@fr , "48.854893"@fr ;
+        :coordlong        " 2.342303"@fr , " 2.337826"@fr , " 2.334555"@fr ;
+        :datetournage     "2016-11-30" , "2016-11-29" ;
+        :duree            "95 " ;
+        :imdbid           "tt6382412"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.7"@fr ;
+        :resume           "Twenty years after she was last in Paris, a woman returns to the City of Light, where she reconnects with her college boyfriend and first love."@fr ;
+        :sederoule        :Paris ;
+        :titre            "LOVE LOCKS" ;
+        :type             "TELEFILM"@fr .
+
+:CardinalX  a             owl:NamedIndividual ;
+        :adressetournage  "420 Mason St." , "Lyon at Chestnut St." , "100 Alemany Blvd." , "119 Utah" , "3639 Taraval St" , "1559 Underwood Avenue between Lane and Keith" , "1465 Revere Avenue between Keith and Jennings" , "812 22nd St. and Tennessee" , "1601 Lane St." , "1458 33rd Ave." ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BYTUyOWY2ZjQtZGYxMy00NGVlLThjMTYtNzA4ZjBlODhhOTQ5XkEyXkFqcGdeQXVyNjI3ODMyNQ@@._V1_SX300.jpg"@fr ;
+        :annee            "2017"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "93 " ;
+        :imdbid           "tt3664992"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "8.1"@fr ;
+        :resume           "In 1984, the most powerful drug dealer on the west coast was a 19 year old coed. Based on actual events."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Cardinal X" ;
+        :type             ""@fr .
+
+:AdamSandler  a     owl:NamedIndividual ;
+        rdfs:label  "Adam Sandler"@fr ;
+        :jouedans   :FirstDates .
+
+:ChanisMissing  a         owl:NamedIndividual ;
+        :adressetournage  "Golden Dragon Restaurant (816 Washington Street at Grant)" , "Li Po (916 Grant Avenue at Washington, Chinatown)" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BNzc0MjY1NzIzOV5BMl5BanBnXkFtZTcwODQwOTEzMQ@@._V1_SX300.jpg"@fr ;
+        :annee            "1982"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "80 " ;
+        :imdbid           "tt0083728"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.1"@fr ;
+        :resume           "Two cabbies search San Francisco's Chinatown for a mysterious character who has disappeared with their $4000. Their quest leads them on a humorous, if mundane, journey which illuminates the..."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chan is Missing" ;
+        :type             ""@fr .
+
+:ChrisRatti  a      owl:NamedIndividual ;
+        rdfs:label  " Chris Ratti"@fr ;
+        :jouedans   :AmericanYearbook .
+
+:BirdmanofAlcatraz  a     owl:NamedIndividual ;
+        :adressetournage  "Pier 43 1/2" , "Alcatraz Island" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc4NDc3MjIyMV5BMl5BanBnXkFtZTcwMTEyNDcyNA@@._V1_SX300.jpg"@fr ;
+        :annee            "1962"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "147 " ;
+        :imdbid           "tt0055798"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.8"@fr ;
+        :resume           "A surly convicted murderer held in permanent isolation redeems himself when he becomes a renowned bird expert."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Birdman of Alcatraz" ;
+        :type             ""@fr .
+
+:MadisonCook  a     owl:NamedIndividual ;
+        rdfs:label  " Madison Cook"@fr ;
+        :jouedans   :AboutaBoy .
+
+:India  a       owl:NamedIndividual .
+
+:titre  a                   owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:MichielHuisman  a  owl:NamedIndividual ;
+        rdfs:label  " Michiel Huisman"@fr ;
+        :jouedans   :AgeofAdaline .
+
+:AgeofAdaline  a          owl:NamedIndividual ;
+        :adressetournage  "Pier 50- end of the pier" , "Montgomery/Green" , "California @ Montgomery" , "Plate Shots SF streets various" , "Driving various SF Streets" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMTAzMTQzMTA2MjheQTJeQWpwZ15BbWU4MDk2MTg2MzUx._V1_SX300.jpg"@fr ;
+        :annee            "2015"@fr ;
+        :apourorigine     :USA , :Canada ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "112 " ;
+        :imdbid           "tt1655441"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.2"@fr ;
+        :resume           "A young woman, born at the turn of the 20th century, is rendered ageless after an accident. After many solitary years, she meets a man who complicates the eternal life she has settled into."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Age of Adaline" ;
+        :type             ""@fr .
+
+:CORNICHEKENNEDY  a       owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BZWYwY2VmMjQtMjgzNS00NzUyLTk4NzgtOTQ2Y2ExY2I4MmZmXkEyXkFqcGdeQXVyMTQ3Njg3MQ@@._V1_SX300.jpg"@fr ;
+        :annee            "2016"@fr ;
+        :apourorigine     :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "94 " ;
+        :imdbid           "tt5027116"@fr ;
+        :nbjourstournage  "40"@fr ;
+        :note             "5.6"@fr ;
+        :resume           "A young group of teenagers enjoying their summer on the beach of Marseille France get involved in some drugs trafficking and investigated by police ."@fr ;
+        :sederoule        :Marseille ;
+        :titre            "CORNICHE KENNEDY" ;
+        :type             ""@fr .
+
+:WalterBrennan  a   owl:NamedIndividual ;
+        rdfs:label  " Walter Brennan"@fr ;
+        :jouedans   :BarbaryCoast .
+
+:USA    a       owl:NamedIndividual .
+
+:LaureenChew  a     owl:NamedIndividual ;
+        rdfs:label  " Laureen Chew"@fr ;
+        :jouedans   :ChanisMissing .
+
+:SamuelBerkowitz  a  owl:NamedIndividual ;
+        rdfs:label  " Samuel Berkowitz"@fr ;
+        :jouedans   :FacesofDeath .
+
+:HenryZaga  a       owl:NamedIndividual ;
+        rdfs:label  " Henry Zaga"@fr ;
+        :jouedans   :CardinalX .
+
+:Chance-Season1ep110  a   owl:NamedIndividual ;
+        :adressetournage  "1901 Ocean Ave. at Ashton Ave." , "18 Urbano" , "Cliffhouse, 1090 Point Lobos Ave." , "1 Urbano" , "San Francisco General Hospital" , "Ocean Park Motel" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance- Season 1 ep110" ;
+        :type             ""@fr .
+
+:MarioScarpetta  a  owl:NamedIndividual ;
+        rdfs:label  " Mario Scarpetta"@fr ;
+        :jouedans   :ANightFullofRain .
+
+:HarrisonFord  a    owl:NamedIndividual ;
+        rdfs:label  " Harrison Ford"@fr ;
+        :jouedans   :AgeofAdaline .
+
+:PeterWang  a       owl:NamedIndividual ;
+        rdfs:label  " Peter Wang"@fr ;
+        :jouedans   :ChanisMissing .
+
+:GayThomasWilson  a  owl:NamedIndividual ;
+        rdfs:label  " Gay Thomas Wilson"@fr ;
+        :jouedans   :BoysandGirls .
+
+:AlicePol  a        owl:NamedIndividual ;
+        rdfs:label  " Alice Pol"@fr ;
+        :jouedans   :CEZANNEETMOI .
+
+:BirthoftheDragon  a      owl:NamedIndividual ;
+        :adressetournage  "Waverly Pl between Washington and Sacramento" , "Twin Peaks Blvd." , "Lands End Trail at Eagles Point/ Lincoln Park Golf Course" , "Hyde at Union" , "Leavenworth at Green" , "Grant between Bush and Broadway" , "Pier 45 - Jeremiah O'Brien Liberty Ship" , "California at Mason" , "Spofford between Clay and Washington" , "California at Grant" , "Leavenworth at Union" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMzk3OTQ4MjY0OF5BMl5BanBnXkFtZTgwNzQ2MTcwMzI@._V1_SX300.jpg"@fr ;
+        :annee            "2016"@fr ;
+        :apourorigine     :USA , :Canada , :China ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "95 " ;
+        :imdbid           "tt2720826"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "5.3"@fr ;
+        :resume           "Set against the backdrop of 1960s San Francisco, BIRTH OF THE DRAGON is a modern take on the classic movies that Bruce Lee was known for. It takes its inspiration from the epic and still controversial showdown between an up-and-coming Bruce Lee and kung fu master Wong Jack Man - a battle that gave birth to a legend."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Birth of the Dragon" ;
+        :type             ""@fr .
+
+:RichardConti  a    owl:NamedIndividual ;
+        rdfs:label  " Richard Conti"@fr ;
+        :jouedans   :BlueJasmine .
+
+:Burglar  a               owl:NamedIndividual ;
+        :adressetournage  "1627 Haight Street" , "1400 18th Street" , "California Academy of Sciences (Golden Gate Park)" , "Green Valley Restaurant (510 Green Street Near Grant)" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BYzI2OTc4MmYtZTNmMS00NWY3LTg1NTMtMDc2OGRlNmEzNGEyXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_SX300.jpg"@fr ;
+        :annee            "1987"@fr ;
+        :apourorigine     :USA , :Canada ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "103 " ;
+        :imdbid           "tt0092710"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "5.0"@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Burglar" ;
+        :type             ""@fr .
+
+:MehdiOrtelsberg  a  owl:NamedIndividual ;
+        rdfs:label  " Mehdi Ortelsberg"@fr ;
+        :jouedans   :LAVACHE .
+
+:adressetournage  a         owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:label          "adressetournage"@fr ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:MaxMinghella  a    owl:NamedIndividual ;
+        rdfs:label  " Max Minghella"@fr ;
+        :jouedans   :BeeSeason .
+
+:TanikellaBharani  a  owl:NamedIndividual ;
+        rdfs:label  " Tanikella Bharani"@fr .
+
+:codepostal  a              owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:RaquelBeaudene  a  owl:NamedIndividual ;
+        rdfs:label  " Raquel Beaudene"@fr ;
+        :jouedans   :BoysandGirls .
+
+:JEVOULAISJUSTERENTRERCHEZMOI
+        a                 owl:NamedIndividual ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       "75003"@fr , "75013"@fr ;
+        :coordlat         "48.838067"@fr , "48.866961"@fr ;
+        :coordlong        " 2.356564"@fr , " 2.354634"@fr ;
+        :datetournage     "2016-12-08" , "2016-11-21" ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :Paris ;
+        :titre            "JE VOULAIS JUSTE RENTRER CHEZ MOI" ;
+        :type             "TELEFILM"@fr .
+
+:Chance-Season1ep105  a   owl:NamedIndividual ;
+        :adressetournage  "State Garage, 818 Leavenworth" , "The Drew School, 2901 California" , "Maiden Lane between Kearny and Grant" , "60 Leavenworth St." , "Private alley along 20th St. between Tennessee and Minnesota" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance - Season 1 ep105" , "Chance - Season 1ep105" ;
+        :type             ""@fr .
+
+:Jean-MarcBarr  a   owl:NamedIndividual ;
+        rdfs:label  "Jean-Marc Barr"@fr ;
+        :jouedans   :BigSur .
+
+:CoreyStoll  a      owl:NamedIndividual ;
+        rdfs:label  " Corey Stoll"@fr ;
+        :jouedans   :Ant-Man .
+
+:MariaBello  a      owl:NamedIndividual ;
+        rdfs:label  " Maria Bello"@fr ;
+        :jouedans   :BeautifulBoy .
+
+:FlorencePernel  a  owl:NamedIndividual ;
+        rdfs:label  " Florence Pernel"@fr ;
+        :jouedans   :LAVACHE .
+
+:BeautifulBoy  a          owl:NamedIndividual ;
+        :adressetournage  "Ohloff Recovery Center (601 Steiner St)" , "Wisconsin between 19th and 20th St" , "Tenderloin Neighborhood" , "18th St at San Bruno Ave." , "Divisadero between Broadway and Greenwich" , "Haight at Masonic" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMwMjAyMTg0N15BMl5BanBnXkFtZTcwNjAzMTQ3NA@@._V1_SX300.jpg"@fr ;
+        :annee            "2010"@fr ;
+        :apourorigine     :USA , :Canada ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "100 " ;
+        :imdbid           "tt1533013"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.6"@fr ;
+        :resume           "A married couple on the verge of separation are leveled by the news their 18-year-old son committed a mass shooting at his college, then took his own life."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Beautiful Boy" ;
+        :type             ""@fr .
+
+:AdrienBrody  a     owl:NamedIndividual ;
+        rdfs:label  "Adrien Brody"@fr ;
+        :jouedans   :DUMMY .
+
+:MaryEllenBrighton  a  owl:NamedIndividual ;
+        rdfs:label  " Mary Ellen Brighton"@fr ;
+        :jouedans   :FacesofDeath .
+
+:Chance-Season1ep104  a   owl:NamedIndividual ;
+        :adressetournage  "Agua Vista Park at Mission Rock, 817 Terry A Francois Blvd." , "15th St. between Vermont and Kansas" , "Miraloma Mall at Portola Frontage Road" , "11 San Jacinto Ave." , "200 Kansas St." , "Palace of Fine Arts" , "Bush and Sansome St." , "901/909Tennessee St." , "Bayview Police Station, 201 Williams Ave." , "1018 Tennessee St." ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance- Season 1 ep104" ;
+        :type             ""@fr .
+
+:SanFrancisco  a    owl:NamedIndividual ;
+        rdfs:label  "San Francisco"@fr .
+
+:pays   a                owl:Class ;
+        rdfs:label       "pays"@fr ;
+        rdfs:subClassOf  :lieu .
+
+:Mari   a           owl:NamedIndividual ;
+        rdfs:label  " Mari"@fr ;
+        :jouedans   :Babies .
+
+:Drama  a           owl:NamedIndividual ;
+        rdfs:label  "Drama"@fr , " Drama"@fr ;
+        :jouedans   :Cherish , :BeeSeason , :Beaches , :TOURDEFRANCE , :ONEWAYTICKET , :CHOUF , :CardinalX , :ChanisMissing , :BirdmanofAlcatraz , :AgeofAdaline , :CORNICHEKENNEDY , :BirthoftheDragon , :BeautifulBoy , :CEZANNEETMOI , :MARSEILLE , :Americana , :ANightFullofRain , :DUMMY , :BasicInstinct , :ETMONCOEURTRANSPARENT , :BigSur , :FirstDates , :CasualtiesofWar , :Alcatraz , :BoysandGirls , :AroundtheFire , :BlueJasmine , :AboutaBoy , :ByHookorByCrook , :AmericanGraffiti , :BarbaryCoast , :BigEyes , :BicentennialMan , :NADIA , :AllAboutEve , :AmericanYearbook .
+
+:courtmetrage  a             owl:Class ;
+        rdfs:label           "courtmetrage"@fr ;
+        owl:disjointWith     :longmetrage ;
+        owl:equivalentClass  [ a                   owl:Class ;
+                               owl:intersectionOf  ( :Film
+                                                     [ a                   owl:Restriction ;
+                                                       owl:onProperty      :duree ;
+                                                       owl:someValuesFrom  [ a                     rdfs:Datatype ;
+                                                                             owl:onDatatype        xsd:int ;
+                                                                             owl:withRestrictions  ( [ xsd:maxExclusive  59 ]
+                                                                                                   )
+                                                                           ]
+                                                     ]
+                                                   )
+                             ] .
+
+:EdnaPurviance  a   owl:NamedIndividual ;
+        rdfs:label  " Edna Purviance"@fr ;
+        :jouedans   :AJitneyElopement .
+
+:Sadek  a           owl:NamedIndividual ;
+        rdfs:label  " Sadek"@fr ;
+        :jouedans   :TOURDEFRANCE .
+
+:BallersSeason3  a        owl:NamedIndividual ;
+        :adressetournage  "California and Jones St." , "Fairmont Hotel (950 Mason Street, Nob Hill)" , "Embarcadero around Rincon Park" , "San Remo Hotel (2237 Mason)" , "Huntington Park (California & Taylor Streets, Nob Hill)" , "Driving around Taylor/Pacific/Leavenworth" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Ballers Season 3" ;
+        :type             ""@fr .
+
+:BrendanFraser  a   owl:NamedIndividual ;
+        rdfs:label  "Brendan Fraser"@fr ;
+        :jouedans   :Bedazzled .
+
+:GuillaumeGallienne  a  owl:NamedIndividual ;
+        rdfs:label  " Guillaume Gallienne"@fr ;
+        :jouedans   :CEZANNEETMOI .
+
+:CEZANNEETMOI  a          owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BYzFmMzM4MWItOTBjYi00ZGUyLTg1N2MtMjUwYTU4NTBmMTkzXkEyXkFqcGdeQXVyMjQ3NzUxOTM@._V1_SX300.jpg"@fr ;
+        :annee            "2016"@fr ;
+        :apourorigine     :Belgium , :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "117 " ;
+        :imdbid           "tt5078354"@fr ;
+        :nbjourstournage  "1"@fr ;
+        :note             "5.9"@fr ;
+        :sederoule        :Marseille ;
+        :titre            "CEZANNE ET MOI" ;
+        :type             ""@fr .
+
+:SarahJones  a      owl:NamedIndividual ;
+        rdfs:label  "Sarah Jones"@fr ;
+        :jouedans   :Alcatraz .
+
+:AlexandraKrismer  a  owl:NamedIndividual ;
+        rdfs:label  " Alexandra Krismer"@fr ;
+        :jouedans   :CHUZPE .
+
+:personne  a        owl:Class ;
+        rdfs:label  "personne"@fr .
+
+:MARSEILLE  a             owl:NamedIndividual ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMjMwNTY0NjU5N15BMl5BanBnXkFtZTgwODYyNzc3NDM@._V1_SX300.jpg"@fr ;
+        :annee            "2016?"@fr ;
+        :apourorigine     :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "41 " ;
+        :imdbid           "tt4003966"@fr ;
+        :nbjourstournage  "49"@fr ;
+        :note             "6.9"@fr ;
+        :resume           "A tale of power, corruption and redemption set against the rich backdrop of the French port city of Marseille."@fr ;
+        :sederoule        :Marseille ;
+        :titre            "MARSEILLE" ;
+        :type             ""@fr .
+
+:ElizabethHurley  a  owl:NamedIndividual ;
+        rdfs:label  " Elizabeth Hurley"@fr ;
+        :jouedans   :Bedazzled .
+
+:ThomasNoguchi  a   owl:NamedIndividual ;
+        rdfs:label  " Thomas Noguchi"@fr ;
+        :jouedans   :FacesofDeath .
+
+:NickTagas  a       owl:NamedIndividual ;
+        rdfs:label  "Nick Tagas"@fr ;
+        :jouedans   :AmericanYearbook .
+
+:Americana  a             owl:NamedIndividual ;
+        :adressetournage  "679 Madrid St" , "Treasure Island" , "33 Spruce St" , "Foreign Cinema (2534 Mission)" , "Roxie Theater (3117 16th St.)" , "20th St and Illinois/Faxon St. and Kenwood/Glenbrook at Mt. Springs" , "St. Francis Episcopal Church (399 San Fernando Way)" , "Jackson St. at Spruce" , "Palace of Fine Arts" , "Laguna Honda Hospital; 375 Laguna Honda Blvd." , "Variety Preview Room (582 Market St.)" , "Coi Restaurant (373 Broadway)" , "Romolo Place @ Fresno St." , "3232 Jackson Ave." , "The San Francisco School (300 Gavin St.)" , "John Shelley Drive John McLaren Park" , "Bernal Heights Park" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzNzMwMTEyNl5BMl5BanBnXkFtZTcwNDE1NzMyMQ@@._V1_SX300.jpg"@fr ;
+        :annee            "1981"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "91 " ;
+        :imdbid           "tt0082011"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.4"@fr ;
+        :resume           "In a small town in rural Kansas, a troubled veteran attempts to restore an old merry-go-round ride."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Americana" ;
+        :type             ""@fr .
+
+:ZineDarar  a       owl:NamedIndividual ;
+        rdfs:label  " Zine Darar"@fr ;
+        :jouedans   :CHOUF .
+
+:EllenBurstyn  a    owl:NamedIndividual ;
+        rdfs:label  " Ellen Burstyn"@fr ;
+        :jouedans   :AgeofAdaline .
+
+:GiovannieEspiritu  a  owl:NamedIndividual ;
+        rdfs:label  " Giovannie Espiritu"@fr ;
+        :jouedans   :AmericanYearbook .
+
+:LAVACHE  a               owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA2ODY5OTQyNV5BMl5BanBnXkFtZTcwODgwNDY3Mg@@._V1_SX300.jpg"@fr ;
+        :annee            "2000"@fr ;
+        :apourorigine     :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "90 " ;
+        :imdbid           "tt0217116"@fr ;
+        :nbjourstournage  "2"@fr ;
+        :note             "6.5"@fr ;
+        :resume           "Romain, the widowed father of eight-year-old Lucas, is a farmer in Brittany. He owns a herd of about twenty cows,one of which is called Maeva and is his son's favorite. The small Scottish ..."@fr ;
+        :sederoule        :Marseille ;
+        :titre            "LA VACHE" ;
+        :type             ""@fr .
+
+:RobSchneider  a    owl:NamedIndividual ;
+        rdfs:label  " Rob Schneider"@fr ;
+        :jouedans   :FirstDates .
+
+:BurtLancaster  a   owl:NamedIndividual ;
+        rdfs:label  "Burt Lancaster"@fr ;
+        :jouedans   :BirdmanofAlcatraz .
+
+:KyleGallner  a     owl:NamedIndividual ;
+        rdfs:label  " Kyle Gallner"@fr ;
+        :jouedans   :BeautifulBoy .
+
+:ANightFullofRain  a      owl:NamedIndividual ;
+        :adressetournage  "Fairmont Hotel (950 Mason Street, Nob Hill)" , "San Francisco Chronicle (901 Mission Street at 15th Street)" , "Broadway (North Beach)" , "Embarcadero Freeway" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQyMDI3NzY1MV5BMl5BanBnXkFtZTYwMzg2Mzc4._V1_SX300.jpg"@fr ;
+        :annee            "1978"@fr ;
+        :apourorigine     :Italy , :Canada ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "104 " ;
+        :imdbid           "tt0077548"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.1"@fr ;
+        :resume           "Candice Bergen and Giancarlo Giannini star as two people from very different worlds who fall in love in A Night Full of Rain. When romantic Italian journalist Paolo (Giannini) rescues ..."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "A Night Full of Rain" ;
+        :type             ""@fr .
+
+:Broken-AModernLoveStory
+        a                 owl:NamedIndividual ;
+        :adressetournage  "Ina Coolbrith Park (1700 Taylor Street)" , "0-100 block Halleck Street" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Broken-A Modern Love Story " ;
+        :type             ""@fr .
+
+:JulietteBinoche  a  owl:NamedIndividual ;
+        rdfs:label  " Juliette Binoche"@fr ;
+        :jouedans   :BeeSeason .
+
+:AViewtoaKill  a          owl:NamedIndividual ;
+        :adressetournage  "Chinatown" , "Burger Island (901 3rd Street, China Basin)" , "Lefty O' Doul Drawbridge/ 3rd Street Bridge (3rd Street, China Basin)" , "Golden Gate Bridge" , "Port of San Francisco " , "Van Ness Avenue" , "City Hall" , "Taylor and Jefferson Streets (Fisherman's Wharf)" , "Embarcadero Freeway" , "Potrero Hill" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMTZjNzJhOWYtMjZiNS00NmU2LTllYjAtOTAzMDk1NTI0ZTFkXkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg"@fr ;
+        :annee            "1985"@fr ;
+        :apourorigine     :UK , :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "131 " ;
+        :imdbid           "tt0090264"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.3"@fr ;
+        :resume           "An investigation of a horse-racing scam leads 007 to a mad industrialist who plans to create a worldwide microchip monopoly by destroying California's Silicon Valley."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "A View to a Kill" ;
+        :type             ""@fr .
+
+:Chance-Season1Pilot  a   owl:NamedIndividual ;
+        :adressetournage  "Jefferson Square Park" , "State Garage, 818 Leavenworth" , "William Stout Architectural Books, 804 Montgomery St." , "1055 Montgomery St." , "UN Plaza/ Civic Center Bart steps" , "Warren's Antiques, 375 9th St." , "940 Powell St." , "253 4th Ave." , "Antonio Alley" , "Harvey Milk Rec Center, 50 Scott St." , "60 Leavenworth St." , "66 Potomac" , "Jonell's Bar, 401 Ellis" , "Ellis Food Center, 398 Ellis" , "Ellis and Jones St." , "Washington Square Park" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance - Season 1 Pilot" ;
+        :type             ""@fr .
+
+:RobertVaughn  a    owl:NamedIndividual ;
+        rdfs:label  " Robert Vaughn"@fr ;
+        :jouedans   :Bullitt .
+
+:RichardGere  a     owl:NamedIndividual ;
+        rdfs:label  "Richard Gere"@fr ;
+        :jouedans   :BeeSeason .
+
+:PauloCostanzo  a   owl:NamedIndividual ;
+        rdfs:label  " Paulo Costanzo"@fr ;
+        :jouedans   :Daysand40Nights .
+
+:ElissaLandi  a     owl:NamedIndividual ;
+        rdfs:label  " Elissa Landi"@fr ;
+        :jouedans   :AftertheThinMan .
+
+:Bedazzled  a             owl:NamedIndividual ;
+        :adressetournage  "Vaillancourt Fountain (Justin Herman Plaza)" , "1155 Filbert Street at Hyde" , "Washington Square Park (Filbert, between Stockton and Powell)" , "Montgomery & Market Streets" , "City Hall" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BODgxOTg5OGUtOWViMC00NjM5LWEyMTQtN2M4NTBjYWUzOWUzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"@fr ;
+        :annee            "2000"@fr ;
+        :apourorigine     :USA , :Germany ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "93 " ;
+        :imdbid           "tt0230030"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.0"@fr ;
+        :resume           "Hopeless dweeb Elliot Richards is granted seven wishes by the Devil to snare Allison, the girl of his dreams, in exchange for his soul."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Bedazzled" ;
+        :type             ""@fr .
+
+:DarleenHollis  a   owl:NamedIndividual ;
+        rdfs:label  " Darleen Hollis"@fr ;
+        :jouedans   :HoursonCraigslist .
+
+:DEMAINTOUTCOMMENCE  a    owl:NamedIndividual ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  "1"@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :Marseille ;
+        :titre            "DEMAIN TOUT COMMENCE" ;
+        :type             ""@fr .
+
+:CharlesChaplin  a  owl:NamedIndividual ;
+        rdfs:label  "Charles Chaplin"@fr ;
+        :jouedans   :AJitneyElopement .
+
+:PriyaAnand  a      owl:NamedIndividual ;
+        rdfs:label  " Priya Anand"@fr .
+
+:MaureenMaher  a    owl:NamedIndividual ;
+        rdfs:label  " Maureen Maher"@fr ;
+        :jouedans   :Hours .
+
+:apourorigine  a            owl:ObjectProperty ;
+        rdfs:comment        "apourorigine"@fr , "a pour origine"@fr ;
+        rdfs:domain         :Film ;
+        rdfs:range          :pays ;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+:NevilleBrand  a    owl:NamedIndividual ;
+        rdfs:label  " Neville Brand"@fr ;
+        :jouedans   :BirdmanofAlcatraz .
+
+:DUMMY  a                 owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMTU2NTA3MTEzN15BMl5BanBnXkFtZTYwOTkwNzg2._V1_SX300.jpg"@fr ;
+        :annee            "2002"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "91 " ;
+        :imdbid           "tt0246592"@fr ;
+        :nbjourstournage  "2"@fr ;
+        :note             "6.8"@fr ;
+        :resume           "An ex-office worker becomes a ventriloquist, leading to a date with his unemployment counselor; but his quirky family and a gauche female friend may thwart his new career and love life."@fr ;
+        :sederoule        :Marseille ;
+        :titre            "DUMMY" ;
+        :type             ""@fr .
+
+:coordlong  a               owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:JoshHartnett  a    owl:NamedIndividual ;
+        rdfs:label  "Josh Hartnett"@fr ;
+        :jouedans   :Daysand40Nights .
+
+:BasicInstinct  a         owl:NamedIndividual ;
+        :adressetournage  "Chinatown" , "1158-70 Montgomery Street" , "Hall of Justice (850 Bryant Street)" , "Gibb Street (Chinatown)" , "2104 Broadway" , "Yerba Buena Center for the Arts" , "2930 Vallejo Street" , "Kearney Street (Telegraph Hill)" , "Steinhart Aquarium (California Academy of Sciences, Golden Gate Park)" , "Transbay Terminal (Mission Street at 1st Street)" , "Raw Hide II (280 Seventh Street)" , "Pier 7 (The Embarcadero)" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BZjk0YmJkNjItNDY3Mi00ZWFiLWEwY2EtMDJlZWJlOWZkNzJlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"@fr ;
+        :annee            "1992"@fr ;
+        :apourorigine     :UK , :USA , :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "127 " ;
+        :imdbid           "tt0103772"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.9"@fr ;
+        :resume           "A violent, suspended police detective investigates a brutal murder, in which a manipulative and seductive woman could be involved."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Basic Instinct" ;
+        :type             ""@fr .
+
+:MichaelDouglas  a  owl:NamedIndividual ;
+        rdfs:label  " Michael Douglas"@fr , "Michael Douglas"@fr ;
+        :jouedans   :BasicInstinct , :Ant-Man .
+
+:KurtRussell  a     owl:NamedIndividual ;
+        rdfs:label  "Kurt Russell"@fr ;
+        :jouedans   :BigTroubleinLittleChina .
+
+:SANFRANCISCO  rdfs:label  "San Fransisco"@fr ;
+        owl:sameas  <http://dbpedia.org/resource/San_Francisco> .
+
+:Chance-Season1ep109  a   owl:NamedIndividual ;
+        :adressetournage  "850 Bryant- 6th floor County Jail" , "2 Rowland" , "Cliffhouse, 1090 Point Lobos Ave." , "60 Leavenworth St." , "Terry A. Francois Blvd. " , "Ocean Park Motel" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance- Season 1 ep109" ;
+        :type             ""@fr .
+
+:Hours  a                 owl:NamedIndividual ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMTkzMTkwMDc5OF5BMl5BanBnXkFtZTcwNTI4MTE1MQ@@._V1_SX300.jpg"@fr ;
+        :annee            "1988?"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "60 " ;
+        :imdbid           "tt0271894"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.4"@fr ;
+        :resume           "One of television's most popular true-crime series, investigating shocking cases and compelling real-life dramas with journalistic integrity and cutting-edge style."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "48 Hours" ;
+        :type             ""@fr .
+
+:ETMONCOEURTRANSPARENT
+        a                 owl:NamedIndividual ;
+        :affiche          "N/A"@fr ;
+        :annee            "2015"@fr ;
+        :apourorigine     :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "N/A" ;
+        :imdbid           "tt4860100"@fr ;
+        :nbjourstournage  "7"@fr ;
+        :note             "N/A"@fr ;
+        :resume           "N/A"@fr ;
+        :sederoule        :Marseille ;
+        :titre            "ET MON COEUR TRANSPARENT" ;
+        :type             ""@fr .
+
+:SilasHoward  a     owl:NamedIndividual ;
+        rdfs:label  "Silas Howard"@fr ;
+        :jouedans   :ByHookorByCrook .
+
+:annee  a                   owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:label          "annee"@fr ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:JohnC.Reilly  a    owl:NamedIndividual ;
+        rdfs:label  " John C. Reilly"@fr ;
+        :jouedans   :CasualtiesofWar .
+
+:WoodMoy  a         owl:NamedIndividual ;
+        rdfs:label  "Wood Moy"@fr ;
+        :jouedans   :ChanisMissing .
+
+:Austria  a     owl:NamedIndividual .
+
+:CarinaGia  a       owl:NamedIndividual ;
+        rdfs:label  " Carina Gia"@fr ;
+        :jouedans   :ByHookorByCrook .
+
+:FloraCross  a      owl:NamedIndividual ;
+        rdfs:label  " Flora Cross"@fr ;
+        :jouedans   :BeeSeason .
+
+:NeilRoss  a        owl:NamedIndividual ;
+        rdfs:label  " Neil Ross"@fr ;
+        :jouedans   :AttackoftheKillerTomatoes .
+
+:CateBlanchett  a   owl:NamedIndividual ;
+        rdfs:label  "Cate Blanchett"@fr ;
+        :jouedans   :BlueJasmine .
+
+:BigSur  a                owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI3MDU0MDY2MF5BMl5BanBnXkFtZTgwNDY3NjUzMDE@._V1_SX300.jpg"@fr ;
+        :annee            "2013"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "81 " ;
+        :imdbid           "tt1462411"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "5.9"@fr ;
+        :resume           "A recounting of Jack Kerouac's three sojourns to the cabin in Big Sur owned by his friend, poet Lawrence Ferlinghetti."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Big Sur" ;
+        :type             ""@fr .
+
+:Ant-Man  a               owl:NamedIndividual ;
+        :adressetournage  "420 Jones St. at Ellis St." , "601 Buena Vista Ave West at Java St." , "Lombard at Hyde" , "Treasure Island, Building #1, Ave of the Palms" , "Conzelman Rd at McCollough Rd and down Conzelman Rd." , "Intersection of Broadway at Kearney" , "Market between Stuart and Van Ness" , "Columbus between Bay and Washington" , "Pine between Kearney and Davis" , "Grant between Bush and Broadway" , "Intersection of California at Polk" , "California between Kearney and Davis" , "Broadway between Powell and Davis" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMjM2NTQ5Mzc2M15BMl5BanBnXkFtZTgwNTcxMDI2NTE@._V1_SX300.jpg"@fr ;
+        :annee            "2015"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "117 " ;
+        :imdbid           "tt0478970"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.3"@fr ;
+        :resume           "Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, plan and pull off a heist that will save the world."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Ant-Man" ;
+        :type             ""@fr .
+
+:JulienBoisselier  a  owl:NamedIndividual ;
+        rdfs:label  " Julien Boisselier"@fr ;
+        :jouedans   :ETMONCOEURTRANSPARENT .
+
+:FirmineRichard  a  owl:NamedIndividual ;
+        rdfs:label  " Firmine Richard"@fr ;
+        :jouedans   :ETMONCOEURTRANSPARENT .
+
+:Music  a           owl:NamedIndividual ;
+        rdfs:label  " Music"@fr ;
+        :jouedans   :Beaches .
+
+:WhoopiGoldberg  a  owl:NamedIndividual ;
+        rdfs:label  "Whoopi Goldberg"@fr ;
+        :jouedans   :Burglar .
+
+:Germany  a     owl:NamedIndividual .
+
+:LaurenHolly  a     owl:NamedIndividual ;
+        rdfs:label  " Lauren Holly"@fr ;
+        :jouedans   :ASmileLikeYours .
+
+:FirstDates  a            owl:NamedIndividual ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMjAwMzc4MDgxNF5BMl5BanBnXkFtZTYwNjUwMzE3._V1_SX300.jpg"@fr ;
+        :annee            "2004"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "99 " ;
+        :imdbid           "tt0343660"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.8"@fr ;
+        :resume           "Henry Roth is a man afraid of commitment up until he meets the beautiful Lucy. They hit it off and Henry think he's finally found the girl of his dreams, until he discovers she has short-term memory loss and forgets him the very next day."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "50 First Dates" ;
+        :type             ""@fr .
+
+:Italy  a       owl:NamedIndividual .
+
+:Chance-Season1ep102  a   owl:NamedIndividual ;
+        :adressetournage  "Heron and Berwick Alleys" , "State Garage, 818 Leavenworth" , "Sutter Stockton Garage, 444 Stockton" , "YWCA, 940 Powell" , "Warren's Antiques, 375 9th St." , "Westin St. Francis" , "John St. between Powell and Mason" , "Potomac and Waller" , "Betelnut restaurant, 2030 Union St." , "Mason and Pacific" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance- Season 1 ep102" ;
+        :type             ""@fr .
+
+:BrendonRyanBarrett  a  owl:NamedIndividual ;
+        rdfs:label  "Brendon Ryan Barrett"@fr ;
+        :jouedans   :BoysandGirls .
+
+:YueWu  a           owl:NamedIndividual ;
+        rdfs:label  " Yue Wu"@fr ;
+        :jouedans   :BirthoftheDragon .
+
+:JoanCusack  a      owl:NamedIndividual ;
+        rdfs:label  " Joan Cusack"@fr ;
+        :jouedans   :ASmileLikeYours .
+
+:RadhaMitchell  a   owl:NamedIndividual ;
+        rdfs:label  " Radha Mitchell"@fr ;
+        :jouedans   :BigSur .
+
+:AftertheThinMan  a       owl:NamedIndividual ;
+        :adressetournage  "Coit Tower" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BYWNjMTRkOGMtOGMyZS00NTNlLTg5ZTctYTEzMWM1ZDExZjgzXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_SX300.jpg"@fr ;
+        :annee            "1936"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "112 " ;
+        :imdbid           "tt0027260"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.7"@fr ;
+        :resume           "Nick investigates the case of a missing man and later a murder that is connected to Nora's family."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "After the Thin Man" ;
+        :type             ""@fr .
+
+:AJitneyElopement  a      owl:NamedIndividual ;
+        :adressetournage  "Golden Gate Park" , "20th and Folsom Streets" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMDgzZGNjOGUtNDg3Yy00NmY3LWE3YjMtMTFmODQ2MmI2N2RlXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_SX300.jpg"@fr ;
+        :annee            "1915"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "26 " ;
+        :imdbid           "tt0005571"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.0"@fr ;
+        :resume           "Edna's father wants her to marry wealthy Count He-Ha. Charlie, Edna's true love, impersonates the Count at dinner, but the real Count shows up and Charlie is thrown out. Later on Charlie ..."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "A Jitney Elopement" ;
+        :type             ""@fr .
+
+:Crime  a           owl:NamedIndividual ;
+        rdfs:label  " Crime"@fr , "Crime"@fr ;
+        :jouedans   :CHOUF , :CardinalX , :BirdmanofAlcatraz , :Burglar , :BasicInstinct , :AftertheThinMan , :CasualtiesofWar , :Alcatraz , :ByHookorByCrook , :BigEyes , :Bullitt .
+
+:BigTroubleinLittleChina
+        a                 owl:NamedIndividual ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BNzlhYjEzOGItN2MwNS00ODRiLWE5OTItYThiNmJlMTdmMzgxXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SX300.jpg"@fr ;
+        :annee            "1986"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "99 " ;
+        :imdbid           "tt0090728"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.3"@fr ;
+        :resume           "An All-American trucker gets dragged into a centuries-old mystical battle in Chinatown."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Big Trouble in Little China" ;
+        :type             ""@fr .
+
+:AlanArkin  a       owl:NamedIndividual ;
+        rdfs:label  "Alan Arkin"@fr ;
+        :jouedans   :ChuChuandthePhillyFlash .
+
+:JohnHeard  a       owl:NamedIndividual ;
+        rdfs:label  " John Heard"@fr ;
+        :jouedans   :Beaches .
+
+:JeanneTripplehorn  a  owl:NamedIndividual ;
+        rdfs:label  " Jeanne Tripplehorn"@fr ;
+        :jouedans   :BasicInstinct .
+
+:JonnyCoyne  a      owl:NamedIndividual ;
+        rdfs:label  " Jonny Coyne"@fr ;
+        :jouedans   :Alcatraz .
+
+:Romance  a         owl:NamedIndividual ;
+        rdfs:label  " Romance"@fr , "Romance"@fr ;
+        :jouedans   :ASmileLikeYours , :LOVELOCKS , :AgeofAdaline , :DUMMY , :BigSur , :FirstDates , :BoysandGirls , :AboutaBoy , :ByHookorByCrook , :BarbaryCoast , :Daysand40Nights .
+
+:note   a                   owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:label          "note"@fr ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:ArnoldHerzstein  a  owl:NamedIndividual ;
+        rdfs:label  " Arnold Herzstein"@fr ;
+        :jouedans   :Americana .
+
+:CasualtiesofWar  a       owl:NamedIndividual ;
+        :adressetournage  "Mission Dolores Park (Mission District) via J-Church MUNI Train" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BNTJjNTUxMjYtYjNlNC00NDViLWIwZjktMGNkOTQ5MDNjNTFiXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_SX300.jpg"@fr ;
+        :annee            "1989"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "113 " ;
+        :imdbid           "tt0097027"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.1"@fr ;
+        :resume           "During the Vietnam War, a soldier finds himself the outsider of his own squad when they unnecessarily kidnap a female villager."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Casualties of War" ;
+        :type             ""@fr .
+
+:SamNeill  a        owl:NamedIndividual ;
+        rdfs:label  " Sam Neill"@fr ;
+        :jouedans   :BicentennialMan .
+
+:MimiYoung  a       owl:NamedIndividual ;
+        rdfs:label  "Mimi Young"@fr ;
+        :jouedans   :LIMBES .
+
+:CaterinaMurino  a  owl:NamedIndividual ;
+        rdfs:label  "Caterina Murino"@fr ;
+        :jouedans   :ETMONCOEURTRANSPARENT .
+
+:CHUZPE  a                owl:NamedIndividual ;
+        :affiche          "N/A"@fr ;
+        :annee            "2013"@fr ;
+        :apourorigine     :Austria ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "114 " ;
+        :imdbid           "tt3430708"@fr ;
+        :nbjourstournage  "1"@fr ;
+        :note             "N/A"@fr ;
+        :resume           "N/A"@fr ;
+        :sederoule        :Marseille ;
+        :titre            "CHUZPE" ;
+        :type             ""@fr .
+
+:Alcatraz  a              owl:NamedIndividual ;
+        :adressetournage  "Chestnut St. from Larkin to Columbus" , "Francisco St from Larkin to Polk" , "Broadway from Mason to Taylor" , "Filbert St. from Jones to Mason" , "Leavenworth from Filbert & Francisco St" , "Taylor St. from Broadway to Filbert" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BNzQ4ODE2ODk2NF5BMl5BanBnXkFtZTcwMzQwNDIyNw@@._V1_SX300.jpg"@fr ;
+        :annee            "2012"@fr ;
+        :apourorigine     :USA , :Canada ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "60 " ;
+        :imdbid           "tt1728102"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.0"@fr ;
+        :resume           "In 1963, all the prisoners and guards mysteriously disappear from Alcatraz. In the present day, they resurface and a secret agency are tasked with re-capturing them."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Alcatraz" ;
+        :type             ""@fr .
+
+:Horror  a          owl:NamedIndividual ;
+        rdfs:label  " Horror"@fr ;
+        :jouedans   :FacesofDeath .
+
+:BoysandGirls  a          owl:NamedIndividual ;
+        :adressetournage  "Coit Tower" , "Aquatic Park (Jefferson Street)" , "Chinatown" , "Fisherman's Wharf" , "1122 Folsom Street" , "Golden Gate Bridge" , "St. Peter & Paul's Church (666 Filbert Street, Washington Square)" , "Ferry Building" , "Lombard Street" , "Alcatraz Island" , "City Hall" , "628 Cole Street" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMTgyNjIzNTI4Ml5BMl5BanBnXkFtZTcwNzAzMjk0MQ@@._V1_SX300.jpg"@fr ;
+        :annee            "2000"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "94 " ;
+        :imdbid           "tt0204175"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "5.4"@fr ;
+        :resume           "A friendship is put to the ultimate test when two best friends wind up in bed together."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Boys and Girls" ;
+        :type             ""@fr .
+
+:JacquesVilleret  a  owl:NamedIndividual ;
+        rdfs:label  "Jacques Villeret"@fr ;
+        :jouedans   :ONEWAYTICKET .
+
+:ChristopherWalken  a  owl:NamedIndividual ;
+        rdfs:label  " Christopher Walken"@fr ;
+        :jouedans   :AViewtoaKill .
+
+:JacquelineBisset  a  owl:NamedIndividual ;
+        rdfs:label  " Jacqueline Bisset"@fr ;
+        :jouedans   :Bullitt .
+
+:RebeccaRomijn  a   owl:NamedIndividual ;
+        rdfs:label  "Rebecca Romijn"@fr ;
+        :jouedans   :LOVELOCKS .
+
+:Family  a          owl:NamedIndividual ;
+        rdfs:label  " Family"@fr ;
+        :jouedans   :LAVACHE .
+
+:acommeartiste  a           owl:ObjectProperty ;
+        rdfs:comment        "acommeartiste"@fr , "a comme artiste"@fr ;
+        rdfs:domain         :Film ;
+        rdfs:range          :acteur ;
+        rdfs:subPropertyOf  owl:topObjectProperty ;
+        owl:inverseOf       :jouedans .
+
+:LoganSouth  a      owl:NamedIndividual ;
+        rdfs:label  "Logan South"@fr ;
+        :jouedans   :BeautifulBoy .
+
+:OussamaAbdulAal  a  owl:NamedIndividual ;
+        rdfs:label  " Oussama Abdul Aal"@fr ;
+        :jouedans   :CHOUF .
+
+:LizPhair  a        owl:NamedIndividual ;
+        rdfs:label  " Liz Phair"@fr ;
+        :jouedans   :Cherish .
+
+:TanyaRoberts  a    owl:NamedIndividual ;
+        rdfs:label  " Tanya Roberts"@fr ;
+        :jouedans   :AViewtoaKill .
+
+:acteur  a               owl:Class ;
+        rdfs:label       "acteur"@fr ;
+        rdfs:subClassOf  :personne .
+
+:GeorgeSanders  a   owl:NamedIndividual ;
+        rdfs:label  " George Sanders"@fr ;
+        :jouedans   :AllAboutEve .
+
+:IlleanaDouglas  a  owl:NamedIndividual ;
+        rdfs:label  " Illeana Douglas"@fr ;
+        :jouedans   :DUMMY .
+
+:Beriou  a          owl:NamedIndividual ;
+        rdfs:label  "Beriou" .
+
+:MillaJovovich  a   owl:NamedIndividual ;
+        rdfs:label  " Milla Jovovich"@fr ;
+        :jouedans   :DUMMY .
+
+:Animation  a       owl:NamedIndividual ;
+        rdfs:label  "Animation"@fr ;
+        :jouedans   :LIMBES , :AttackoftheKillerTomatoes .
+
+:ParminderNagra  a  owl:NamedIndividual ;
+        rdfs:label  " Parminder Nagra"@fr ;
+        :jouedans   :Alcatraz .
+
+:DrewBarrymore  a   owl:NamedIndividual ;
+        rdfs:label  " Drew Barrymore"@fr ;
+        :jouedans   :FirstDates .
+
+:PEREETFILSTHERAPIE  a    owl:NamedIndividual ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  "12"@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :Marseille ;
+        :titre            "PERE ET FILS THERAPIE" ;
+        :type             ""@fr .
+
+:Canada  a      owl:NamedIndividual .
+
+:AroundtheFire  a         owl:NamedIndividual ;
+        :adressetournage  "Ocean Beach" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMTU5MTUzODkxNF5BMl5BanBnXkFtZTcwMjk4MjQyMQ@@._V1_SX300.jpg"@fr ;
+        :annee            "1998"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "106 " ;
+        :imdbid           "tt0139030"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "5.6"@fr ;
+        :resume           "Around the Fire is the deeply resonant story of a boy named Simon, who despite being raised in an upper-class Manhattan household with all its privileges--and restrictions--is haunted by ..."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Around the Fire" ;
+        :type             ""@fr .
+
+:SimoneBlue  a      owl:NamedIndividual ;
+        rdfs:label  " Simone Blue"@fr ;
+        :jouedans   :NADIA .
+
+:MichaelJ.Fox  a    owl:NamedIndividual ;
+        rdfs:label  "Michael J. Fox"@fr ;
+        :jouedans   :CasualtiesofWar .
+
+:nbjourstournage  a         owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:Marseille  a       owl:NamedIndividual ;
+        rdfs:label  "Marseille"@fr ;
+        owl:sameas  <http://dbpedia.org/resource/Marseille> .
+
+:ChristianGuzek  a  owl:NamedIndividual ;
+        rdfs:label  " Christian Guzek"@fr ;
+        :jouedans   :AttackoftheKillerTomatoes .
+
+:JeanBenguigui  a   owl:NamedIndividual ;
+        rdfs:label  " Jean Benguigui"@fr ;
+        :jouedans   :ONEWAYTICKET .
+
+:BlueJasmine  a           owl:NamedIndividual ;
+        :adressetournage  "790 Ulloa " , "South Park" , "2178 Palou Ave." , "2898 Broadway" , "330 Santa Clara Ave." , "Lombard & Hyde" , "5546 Geary Ave" , "200 Post St. " , "Heald College" , "Taylor & Green St." , "303-305 S. Van Ness" , "The Ramp Restaurant" , "Pacific & Divisadero" , "Jones & Pacific" , "3563 20th St." , "Marina Blvd from Laguna to Baker" , "Aub Zam Zam Bar" , "1138 Alabama St" , "Real Guitars" , "Motel Capri" , "Grant & Washington St." , "2934 24th St." , "2179 48th Ave" , "Trolley Car from Market and 11th" , "Ocean Beach at Lincoln" , "Marina Green" , "SFO International Airport Terminal 3" , "2915 16th St." ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMTc0ODk5MzEyMV5BMl5BanBnXkFtZTcwMzI0MDY1OQ@@._V1_SX300.jpg"@fr ;
+        :annee            "2013"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "98 " ;
+        :imdbid           "tt2334873"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.3"@fr ;
+        :resume           "A New York socialite, deeply troubled and in denial, arrives in San Francisco to impose upon her sister. She looks a million, but isn't bringing money, peace, or love..."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Blue Jasmine" ;
+        :type             ""@fr .
+
+:AboutaBoy  a             owl:NamedIndividual ;
+        :adressetournage  "Crissy Field" , "Powell from Bush and Sutter" , "Broderick from Fulton to McAlister" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMTQ2Mzg4MDAzNV5BMl5BanBnXkFtZTgwMjcxNTYxMTE@._V1_SX300.jpg"@fr ;
+        :annee            "2002"@fr ;
+        :apourorigine     :UK , :USA , :Germany , :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "101 " ;
+        :imdbid           "tt0276751"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.1"@fr ;
+        :resume           "A cynical, immature young man is taught how to act like a grown-up by a little boy."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "About a Boy" ;
+        :type             ""@fr .
+
+:realisateur  a          owl:Class ;
+        rdfs:label       "realisateur"@fr ;
+        rdfs:subClassOf  :personne .
+
+:AmyAdams  a        owl:NamedIndividual ;
+        rdfs:label  "Amy Adams"@fr ;
+        :jouedans   :BigEyes .
+
+:ville  a                owl:Class ;
+        rdfs:label       "ville"@fr ;
+        rdfs:subClassOf  :lieu .
+
+:BillSmitrovich  a  owl:NamedIndividual ;
+        rdfs:label  " Bill Smitrovich"@fr ;
+        :jouedans   :AroundtheFire .
+
+:SharonStone  a     owl:NamedIndividual ;
+        rdfs:label  " Sharon Stone"@fr ;
+        :jouedans   :BasicInstinct .
+
+:apourcoordonee  a          owl:ObjectProperty ;
+        rdfs:comment        "a pour coordonnee"@fr , "apourcoordonnee"@fr ;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+:ByHookorByCrook  a       owl:NamedIndividual ;
+        :adressetournage  "Department of Public Health (101 Grove Street at Polk, Civic Center)" , "Royan Hotel (405 Valencia Street, Mission District)" , "The Lexington Club (3464 19th Street at Lexington)" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMjAwMjYwMDk3NV5BMl5BanBnXkFtZTcwMjkyMDAwMQ@@._V1_SX300.jpg"@fr ;
+        :annee            "2001"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "98 " ;
+        :imdbid           "tt0290498"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "5.8"@fr ;
+        :resume           "By Hook or by Crook chronicles the tale of two unlikely friends who commit petty crimes as they search for a path to understanding themselves and the outside world. Silas Howard plays Shy (..."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "By Hook or By Crook" ;
+        :type             ""@fr .
+
+:War    a           owl:NamedIndividual ;
+        rdfs:label  " War"@fr ;
+        :jouedans   :CasualtiesofWar .
+
+:CharlesMartinSmith  a  owl:NamedIndividual ;
+        rdfs:label  " Charles Martin Smith"@fr ;
+        :jouedans   :AmericanGraffiti .
+
+:AmericanGraffiti  a      owl:NamedIndividual ;
+        :adressetournage  "3355 Geary Blvd." , "Mel's Drive-In (Corner of Van Ness & Mission Street, Mission District)" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI5NjM5MjIyNF5BMl5BanBnXkFtZTgwNjg2MTUxMDE@._V1_SX300.jpg"@fr ;
+        :annee            "1973"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "110 " ;
+        :imdbid           "tt0069704"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.5"@fr ;
+        :resume           "A couple of high school grads spend one final night cruising the strip with their buddies before they go off to college."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "American Graffiti" ;
+        :type             ""@fr .
+
+:LABETECURIEUSE  a        owl:NamedIndividual ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       "75017"@fr , "75014"@fr ;
+        :coordlat         "48.822372"@fr , "48.894847"@fr ;
+        :coordlong        " 2.312146"@fr , " 2.334367"@fr ;
+        :datetournage     "2016-05-10" , "2016-05-06" ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :Paris ;
+        :titre            "LA BETE CURIEUSE" ;
+        :type             "TELEFILM"@fr .
+
+:GuillaumeCanet  a  owl:NamedIndividual ;
+        rdfs:label  "Guillaume Canet"@fr ;
+        :jouedans   :CEZANNEETMOI .
+
+:JorgeGarcia  a     owl:NamedIndividual ;
+        rdfs:label  " Jorge Garcia"@fr ;
+        :jouedans   :Alcatraz .
+
+:Action  a          owl:NamedIndividual ;
+        rdfs:label  "Action"@fr ;
+        :jouedans   :BirthoftheDragon , :AViewtoaKill , :Ant-Man , :BigTroubleinLittleChina , :Alcatraz , :Bullitt .
+
+:affiche  a                 owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:label          "affiche"@fr ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:Short  a           owl:NamedIndividual ;
+        rdfs:label  "Short"@fr , " Short"@fr ;
+        :jouedans   :AJitneyElopement , :LIMBES .
+
+:HarryDodge  a      owl:NamedIndividual ;
+        rdfs:label  " Harry Dodge"@fr ;
+        :jouedans   :ByHookorByCrook .
+
+:duree  a                   owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:label          "duree"@fr ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:Chance-Season1ep108  a   owl:NamedIndividual ;
+        :adressetournage  "1000 Mason St." , "St. Mary's Square Park" , "Fairmont Hotel" , "Huntington Park" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance- Season 1 ep108" ;
+        :type             ""@fr .
+
+:China  a       owl:NamedIndividual .
+
+:DavidJulianHirsh  a  owl:NamedIndividual ;
+        rdfs:label  " David Julian Hirsh"@fr ;
+        :jouedans   :LOVELOCKS .
+
+:JonCarloAlvarez  a  owl:NamedIndividual ;
+        rdfs:label  " Jon Carlo Alvarez"@fr ;
+        :jouedans   :AmericanYearbook .
+
+:ClaireForlani  a   owl:NamedIndividual ;
+        rdfs:label  " Claire Forlani"@fr ;
+        :jouedans   :BoysandGirls .
+
+:Bayar  a           owl:NamedIndividual ;
+        rdfs:label  "Bayar"@fr ;
+        :jouedans   :Babies .
+
+:TaliaBalsam  a     owl:NamedIndividual ;
+        rdfs:label  "Talia Balsam"@fr ;
+        :jouedans   :NADIA .
+
+:EricMabius  a      owl:NamedIndividual ;
+        rdfs:label  " Eric Mabius"@fr ;
+        :jouedans   :AroundtheFire .
+
+:AdamTrese  a       owl:NamedIndividual ;
+        rdfs:label  " Adam Trese"@fr ;
+        :jouedans   :Daysand40Nights .
+
+:DevonSawa  a       owl:NamedIndividual ;
+        rdfs:label  "Devon Sawa"@fr ;
+        :jouedans   :AroundtheFire .
+
+:coordlat  a                owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:OttoSchenk  a      owl:NamedIndividual ;
+        rdfs:label  " Otto Schenk"@fr ;
+        :jouedans   :CHUZPE .
+
+:BarbaryCoast  a          owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BYTQ0YjlmMDMtM2QyMC00NWQzLWFmNWUtMjU4Zjk3NzAxYTQ2XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg"@fr ;
+        :annee            "1935"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "91 " ;
+        :imdbid           "tt0026097"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.9"@fr ;
+        :resume           "Mary Rutledge arrives from the east, finds her fiance dead, and goes to work at the roulette wheel of Louis Charnalis' Bella Donna, a rowdy gambling house in San Francisco in the 1850s. She..."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Barbary Coast" ;
+        :type             ""@fr .
+
+:LIMBES  a                 owl:NamedIndividual ;
+        :affiche           "N/A"@fr ;
+        :annee             "1996"@fr ;
+        :apourorigine      :France ;
+        :apourrealisateur  :Beriou ;
+        :codepostal        ""@fr ;
+        :coordlat          ""@fr ;
+        :coordlong         ""@fr ;
+        :duree             "6 " ;
+        :imdbid            "tt0210808"@fr ;
+        :nbjourstournage   "16"@fr ;
+        :note              "N/A"@fr ;
+        :resume            "N/A"@fr ;
+        :sederoule         :Marseille ;
+        :titre             "LIMBES" ;
+        :type              ""@fr .
+
+:joueavec  a                owl:ObjectProperty ;
+        rdfs:comment        "joueavec"@fr , "joue avec"@fr ;
+        rdfs:domain         :acteur ;
+        rdfs:range          :acteur ;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+:JoeBennett  a      owl:NamedIndividual ;
+        rdfs:label  " Joe Bennett"@fr ;
+        :jouedans   :NADIA .
+
+:BetteDavis  a      owl:NamedIndividual ;
+        rdfs:label  "Bette Davis"@fr ;
+        :jouedans   :AllAboutEve .
+
+:Adventure  a       owl:NamedIndividual ;
+        rdfs:label  " Adventure"@fr , "Adventure"@fr ;
+        :jouedans   :AViewtoaKill , :Ant-Man , :BigTroubleinLittleChina , :BarbaryCoast .
+
+:Comedy  a          owl:NamedIndividual ;
+        rdfs:label  "Comedy"@fr , " Comedy"@fr ;
+        :jouedans   :ASmileLikeYours , :Cherish , :Beaches , :ONEWAYTICKET , :Burglar , :LAVACHE , :Bedazzled , :DUMMY , :Ant-Man , :FirstDates , :AftertheThinMan , :AJitneyElopement , :BigTroubleinLittleChina , :BoysandGirls , :AboutaBoy , :AmericanGraffiti , :AttackoftheKillerTomatoes , :BicentennialMan , :Daysand40Nights , :ChuChuandthePhillyFlash .
+
+:HaiYu  a           owl:NamedIndividual ;
+        rdfs:label  " Hai Yu"@fr ;
+        :jouedans   :BirthoftheDragon .
+
+:GraceJones  a      owl:NamedIndividual ;
+        rdfs:label  " Grace Jones"@fr ;
+        :jouedans   :AViewtoaKill .
+
+:Thriller  a        owl:NamedIndividual ;
+        rdfs:label  " Thriller"@fr ;
+        :jouedans   :Cherish , :AViewtoaKill , :AmericanYearbook .
+
+<http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3>
+        a       owl:Ontology .
+
+:Chance-Season1ep106  a   owl:NamedIndividual ;
+        :adressetournage  "Treasure Island" , "Montgomery between Pacific and Broadway" , "2 Rowland" , "McAllister between Leavenworth and Hyde" , "60 Leavenworth St." , "Grant between Union and Green" , "Washington Square Park" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance- Season 1 ep106" ;
+        :type             ""@fr .
+
+:PaulLeMat  a       owl:NamedIndividual ;
+        rdfs:label  " Paul Le Mat"@fr ;
+        :jouedans   :AmericanGraffiti .
+
+:PeterVanSant  a    owl:NamedIndividual ;
+        rdfs:label  " Peter Van Sant"@fr ;
+        :jouedans   :Hours .
+
+:RichardDreyfuss  a  owl:NamedIndividual ;
+        rdfs:label  "Richard Dreyfuss"@fr ;
+        :jouedans   :AmericanGraffiti .
+
+:DanRather  a       owl:NamedIndividual ;
+        rdfs:label  "Dan Rather"@fr ;
+        :jouedans   :Hours .
+
+:GiancarloGiannini  a  owl:NamedIndividual ;
+        rdfs:label  "Giancarlo Giannini"@fr ;
+        :jouedans   :ANightFullofRain .
+
+:MichaelTucker  a   owl:NamedIndividual ;
+        rdfs:label  " Michael Tucker"@fr ;
+        :jouedans   :ANightFullofRain .
+
+:DannyHuston  a     owl:NamedIndividual ;
+        rdfs:label  " Danny Huston"@fr ;
+        :jouedans   :BigEyes .
+
+:arealise  a                owl:ObjectProperty ;
+        rdfs:comment        "arealise"@fr , "a realise"@fr ;
+        rdfs:domain         :realisateur ;
+        rdfs:range          :Film ;
+        rdfs:subPropertyOf  owl:topObjectProperty .
+
+:ShannynSossamon  a  owl:NamedIndividual ;
+        rdfs:label  " Shannyn Sossamon"@fr ;
+        :jouedans   :Daysand40Nights .
+
+:lieu   a                 owl:Class ;
+        rdfs:label        "lieu"@fr ;
+        owl:disjointWith  :personne .
+
+:JoyCarlin  a       owl:NamedIndividual ;
+        rdfs:label  " Joy Carlin"@fr ;
+        :jouedans   :BlueJasmine .
+
+:KamelKadri  a      owl:NamedIndividual ;
+        rdfs:label  " Kamel Kadri"@fr ;
+        :jouedans   :CORNICHEKENNEDY .
+
+:MichaelSheen  a    owl:NamedIndividual ;
+        rdfs:label  " Michael Sheen"@fr ;
+        :jouedans   :BeautifulBoy .
+
+:JoelMcCrea  a      owl:NamedIndividual ;
+        rdfs:label  " Joel McCrea"@fr ;
+        :jouedans   :BarbaryCoast .
+
+:Sport  a           owl:NamedIndividual ;
+        rdfs:label  " Sport"@fr ;
+        :jouedans   :NADIA .
+
+:UNHOMMEALAHAUTEUR  a     owl:NamedIndividual ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  "34"@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :Marseille ;
+        :titre            "UN HOMME A LA HAUTEUR" ;
+        :type             ""@fr .
+
+:genre  a                   owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:AttackoftheKillerTomatoes
+        a                 owl:NamedIndividual ;
+        :adressetournage  "Hyde Street Cable Car" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BZTM3NDBkYjctNmZiOS00Nzg2LWFiYTAtYWRkZmVjNzVhMjM3XkEyXkFqcGdeQXVyNjExODE1MDc@._V1_SX300.jpg"@fr ;
+        :annee            "1990?1991"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "23 " ;
+        :imdbid           "tt0124229"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.4"@fr ;
+        :resume           "A group of people thwart a mad scientist trying to take over the world with evil mutated tomatoes that he can change into people."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Attack of the Killer Tomatoes" ;
+        :type             ""@fr .
+
+:BigEyes  a               owl:NamedIndividual ;
+        :adressetournage  "Harry's Bar on Fillmore" , "Caffe Trieste" , "1101 Filbert St. " , "Palace of Fine Arts" , "Saints Peter & Paul Church" , "Way Faire Inn on Leidesdorff" , "Pine St. & Grant" , "Nobles Alley" , "Filbert St. & Leavenworth" , "Green St. & Grant Ave." ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BMjA2ODM5MDE3N15BMl5BanBnXkFtZTgwOTIxNjc1MzE@._V1_SX300.jpg"@fr ;
+        :annee            "2014"@fr ;
+        :apourorigine     :USA , :Canada ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "106 " ;
+        :imdbid           "tt1126590"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.0"@fr ;
+        :resume           "A drama about the awakening of painter Margaret Keane, her phenomenal success in the 1950s, and the subsequent legal difficulties she had with her husband, who claimed credit for her works in the 1960s."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Big Eyes" ;
+        :type             ""@fr .
+
+:G.W.Bailey  a      owl:NamedIndividual ;
+        rdfs:label  " G.W. Bailey"@fr ;
+        :jouedans   :Burglar .
+
+:CarolBurnett  a    owl:NamedIndividual ;
+        rdfs:label  " Carol Burnett"@fr ;
+        :jouedans   :ChuChuandthePhillyFlash .
+
+:Another48Hours  a        owl:NamedIndividual ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Another 48 Hours" ;
+        :type             ""@fr .
+
+:BicentennialMan  a       owl:NamedIndividual ;
+        :adressetournage  "Treasure Island" , "Grace Cathedral Episcopal Church (1100 California Street)" , "Golden Gate Bridge" , "City Hall" , "Postcard Row, Alamo Square, Hayes Valley" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BYTU4Nzg5YmItNzE0Yy00Y2VmLWI3OTYtNTFjODEzMDE0YTI4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg"@fr ;
+        :annee            "1999"@fr ;
+        :apourorigine     :USA , :Germany ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "132 " ;
+        :imdbid           "tt0182789"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "6.8"@fr ;
+        :resume           "An android endeavors to become human as he gradually acquires emotions."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Bicentennial Man" ;
+        :type             ""@fr .
+
+:NADIA  a                 owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE2NDY0MDEyNV5BMl5BanBnXkFtZTcwMzM1OTQ0MQ@@._V1_SX300.jpg"@fr ;
+        :annee            "1984"@fr ;
+        :apourorigine     :Yugoslavia , :USA ;
+        :codepostal       "75005"@fr , "75009"@fr , "75012"@fr ;
+        :coordlat         "48.845998"@fr , "48.87758"@fr , "48.845919"@fr ;
+        :coordlong        " 2.402947"@fr , " 2.349665"@fr , " 2.349026"@fr ;
+        :datetournage     "2016-04-12" , "2016-04-25" , "2016-04-15" ;
+        :duree            "100 " ;
+        :imdbid           "tt0087774"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.3"@fr ;
+        :resume           "Story about gymnast Nadia Comaneci from her childhood beginning as a gymnast and how she was discovered by Belya Karolyi. Nadia received 7 perfect 10's in the Montreal Olympics."@fr ;
+        :sederoule        :Paris ;
+        :titre            "NADIA" ;
+        :type             "TELEFILM"@fr .
+
+:Daysand40Nights  a       owl:NamedIndividual ;
+        :adressetournage  "The Walden House, Buena Vista Park" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BYjY1ZWYwM2MtNDk0YS00NjY5LWJiYzQtZjVmYmNlN2Y0MzVkXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_SX300.jpg"@fr ;
+        :annee            "2002"@fr ;
+        :apourorigine     :UK , :USA , :France ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "96 " ;
+        :imdbid           "tt0243736"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "5.6"@fr ;
+        :resume           "After a brutal break-up, a young man vows to stay celibate during the forty days of Lent, but finds the girl of his dreams and is unable to do anything about it."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "40 Days and 40 Nights" ;
+        :type             ""@fr .
+
+:Siddharth  a       owl:NamedIndividual ;
+        rdfs:label  "Siddharth"@fr .
+
+:YetideBadaki  a    owl:NamedIndividual ;
+        rdfs:label  " Yetide Badaki"@fr ;
+        :jouedans   :CardinalX .
+
+:HollyDalton  a     owl:NamedIndividual ;
+        rdfs:label  " Holly Dalton"@fr ;
+        :jouedans   :HoursonCraigslist .
+
+:AllAboutEve  a           owl:NamedIndividual ;
+        :adressetournage  "Curran Theater (445 Geary Street)" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY2MTAzODI5NV5BMl5BanBnXkFtZTgwMjM4NzQ0MjE@._V1_SX300.jpg"@fr ;
+        :annee            "1950"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "138 " ;
+        :imdbid           "tt0042192"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "8.3"@fr ;
+        :resume           "An ingenue insinuates herself into the company of an established but aging stage actress and her circle of theater friends."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "All About Eve" ;
+        :type             ""@fr .
+
+:SpaldingGray  a    owl:NamedIndividual ;
+        rdfs:label  " Spalding Gray"@fr ;
+        :jouedans   :Beaches .
+
+:Bullitt  a               owl:NamedIndividual ;
+        :adressetournage  "2700 Vallejo Street (Pacific Heights)" , "Taylor & Vallejo Streets (Russian Hill)" , "Cesar Chavez & Mission Street (Mission)" , "1153-57 Taylor Street" , "Intersection of York & Peralta (Bernal Heights)" , "Mark Hopkins Hotel (999 California Street)" , "SF General Hospital Center (1001 Potrero Avenue, Potrero Hill)" , "20th & Vermont Streets (Potrero Hill)" , "Columbus & Lombard Streets (North Beach)" , "McLaren Park (Visitacion  Valley)" , "Marina Green (Marina District)" , "Bay Bridge" , "Candlestick Park Exit, Highway 101" , "Larkin & Chestnut Streets (Russian Hill)" , "Brocklebank Apartments (1000 Mason Street)" , "Mansell & University Streets (Visitacion  Valley)" , "John Muir Drive (Lake Merced)" , "Filbert & Taylor Streets (Russian Hill)" , "Larkin & Francisco Streets (Russian Hill)" , "Kennedy Hotel (226 Embarcadero at Howard Street)" , "Bayshore Blvd near Cesar Chavez (Bayview)" ;
+        :affiche          "https://ia.media-imdb.com/images/M/MV5BYTQwNjkyMzctMjY1My00Y2U0LWE5MGEtNWY4M2FhZGYwODE1XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_SX300.jpg"@fr ;
+        :annee            "1968"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "114 " ;
+        :imdbid           "tt0062765"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "7.5"@fr ;
+        :resume           "An all guts, no glory San Francisco cop becomes determined to find the underworld kingpin that killed the witness in his protection."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Bullitt" ;
+        :type             ""@fr .
+
+:News   a           owl:NamedIndividual ;
+        rdfs:label  " News"@fr ;
+        :jouedans   :Hours .
+
+:VeraFarmiga  a     owl:NamedIndividual ;
+        rdfs:label  " Vera Farmiga"@fr ;
+        :jouedans   :DUMMY .
+
+:BarbaraHershey  a  owl:NamedIndividual ;
+        rdfs:label  " Barbara Hershey"@fr ;
+        :jouedans   :Beaches , :Americana .
+
+:imdbid  a                  owl:DatatypeProperty ;
+        rdfs:domain         :Film ;
+        rdfs:label          "amdbid"@fr ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:ThelmaRitter  a    owl:NamedIndividual ;
+        rdfs:label  " Thelma Ritter"@fr ;
+        :jouedans   :BirdmanofAlcatraz .
+
+:ChanceSeason2  a         owl:NamedIndividual ;
+        :adressetournage  "Coit Tower" , "Scott St between Jackson and Clay St" , "Taylor St, north of Jefferson St to end" , "Embarcadero at Vallejo St." , "Marina Blvd between Baker and Fillmore St" , "Central St between Haight and Page St" , "Filbert St at Stockton St" , "Mason between Sacramento and California St" , "Embarcadero between Market to Fillmore St" , "Heron @ Berwick (off 8th and Harrison St)" , "Haight St at Ashbury St" , "Leavenworth at McAllister St" , "Lombard St between Leavenworth and Hyde St" , "Embarcadero at Lombard St. " , "Columbus between Filbert and Lombard St" , "Haight between Central and Ashbury St" , "Waller St between Masonic and Del Mar St" , "Sacramento between Mason and Taylor St" , "Duboce between Buena Vista East and Alpine St" , "Presidio Heights Neighborhood " , "Embarcadero between Bay and Chestnut St" , "Lombard St between Hyde and Larkin St" , "California between Mason and Taylor St" , "20th St between Church and Dolores St" , "Palace of Fine Arts (3301 Lyon Street)" , "Embarcadero between Harrison and Folsom St" , "Union St at Leavenworth St" , "Steiner St between Jackson and Clay St" , "Jefferson St at Taylor St" , "Market St at Embarcadero" ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chance Season 2" ;
+        :type             ""@fr .
+
+:Paris  a           owl:NamedIndividual ;
+        rdfs:label  "Paris"@fr ;
+        owl:sameas  <http://dbpedia.org/resource/Paris> .
+
+:ChuChuandthePhillyFlash
+        a                 owl:NamedIndividual ;
+        :adressetournage  "Transbay Terminal (Mission Street at 1st Street)" ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc1NTU4MjgwMF5BMl5BanBnXkFtZTYwOTA2Mjg5._V1_SX300.jpg"@fr ;
+        :annee            "1981"@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "92 " ;
+        :imdbid           "tt0082177"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "4.1"@fr ;
+        :resume           "Flash used to be a talented baseball player, but he took to drinking and now he sells stolen watches in the streets. One day he meets Chu Chu, who, before falling into alcoholism like him, ..."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "Chu Chu and the Philly Flash" ;
+        :type             ""@fr .
+
+:YuXia  a           owl:NamedIndividual ;
+        rdfs:label  "Yu Xia"@fr ;
+        :jouedans   :BirthoftheDragon .
+
+:Fantasy  a         owl:NamedIndividual ;
+        rdfs:label  " Fantasy"@fr ;
+        :jouedans   :AgeofAdaline , :Bedazzled .
+
+:KarlMalden  a      owl:NamedIndividual ;
+        rdfs:label  " Karl Malden"@fr ;
+        :jouedans   :BirdmanofAlcatraz .
+
+:JayThomas  a       owl:NamedIndividual ;
+        rdfs:label  " Jay Thomas"@fr ;
+        :jouedans   :ASmileLikeYours .
+
+:EmbethDavidtz  a   owl:NamedIndividual ;
+        rdfs:label  " Embeth Davidtz"@fr ;
+        :jouedans   :BicentennialMan .
+
+:Belgium  a     owl:NamedIndividual .
+
+:AlainDemaria  a    owl:NamedIndividual ;
+        rdfs:label  " Alain Demaria"@fr ;
+        :jouedans   :CORNICHEKENNEDY .
+
+:LEGRANDREVERS  a         owl:NamedIndividual ;
+        :affiche          ""@fr ;
+        :annee            ""@fr ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :imdbid           ""@fr ;
+        :nbjourstournage  "6"@fr ;
+        :note             ""@fr ;
+        :resume           ""@fr ;
+        :sederoule        :Marseille ;
+        :titre            "LE GRAND REVERS" ;
+        :type             ""@fr .
+
+:AmericanYearbook  a      owl:NamedIndividual ;
+        :affiche          "https://images-na.ssl-images-amazon.com/images/M/MV5BMjAzMDczNDYxNl5BMl5BanBnXkFtZTcwMDMzNjQyMQ@@._V1_SX300.jpg"@fr ;
+        :annee            "2004"@fr ;
+        :apourorigine     :USA ;
+        :codepostal       ""@fr ;
+        :coordlat         ""@fr ;
+        :coordlong        ""@fr ;
+        :duree            "90 " ;
+        :imdbid           "tt0386284"@fr ;
+        :nbjourstournage  ""@fr ;
+        :note             "5.4"@fr ;
+        :resume           "Will is the kid-next-door, but is relentlessly terrorized by school bullies. Then the mysterious Chance eventually convinces Will that they should get a gun and take the bullies out: pull a Columbine."@fr ;
+        :sederoule        :SanFrancisco ;
+        :titre            "American Yearbook" ;
+        :type             ""@fr .
+
+:France  a      owl:NamedIndividual .
