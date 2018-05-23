@@ -1,0 +1,53 @@
+@charset "ISO-8859-1";
+
+body{
+	background: linear-gradient(#d6d6ff, #fdfdb3);
+}
+
+.content{
+	display:flex;
+}
+
+.content .gauche{
+	width:34%;
+	padding:5px;
+    border-right: solid;
+    margin-right: 20px;
+    border-width: 1px;
+}
+
+.content .droite{
+	width:66%;
+	padding:5px;
+}
+
+.content .droite .haut{
+	/* height:430px; */
+}
+
+label{
+	display: block;
+	width: 200px;
+	float: left;
+}
+
+#mapid { 
+	height: 400px; 
+	width: 600px; 
+	position: relative;
+}
+
+.affiche{
+	width: 200px;
+	height: 300px;
+}
+
+p{
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+/* footer{ */
+	/* position:absolute; */
+	/* bottom:0px; */
+/* } */
