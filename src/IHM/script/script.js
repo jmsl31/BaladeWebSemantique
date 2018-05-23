@@ -47,23 +47,24 @@ function update_map(){
 	var origine_fr = document.getElementById("origine_fr").value;
 	var origine_etr = document.getElementById("origine_etr").value;
 	
-	// On récupere les films correspondant aux filtres;
-////	ontologie get requete;
-//	var films = Fuseki.getFilms()
-//	.then((response) => {
-//    	 console.log(response);
-//	})
-//	.catch(console.log);
-// 	
-//	console.log(films);
-//	// Pour tout les films récupéré, on ajoute un marker
+	// On récupere les films [correspondant aux filtres];
+	var films = Fuseki.getFilms()
+	.then((response) => {
+    	 console.log(response);
+	})
+	.catch(console.log);
 
+	// Pour tout les films récupéré, on ajoute un marker
+	// Au clic sur le marker, on met a jour la rubrique informations
+	for (film in films){
+		console.log(film.titre);
+		var marker = L.marker([51.5, -0.09]).addTo(map);
+//		marker.bindPopup("<b>Titre film ?</b><br>qque info ?.");
+		marker.on("click", function(e) {
+			select_film(e, "");
+		});
+	}
 
-//		var marker = L.marker([51.5, -0.09]).addTo(map);
-////		marker.bindPopup("<b>Titre film ?</b><br>qque info ?.");
-//		marker.on("click", function(e) {
-//			select_film(e, "titre");
-//		});
 
 }
 
@@ -72,7 +73,12 @@ function select_film(e, titre){
 	console.log("Mise à jour des informations");
 	
 	// On récupere le titre du film, on fait une requete sur l'ontologie
-	// et on remplit les champs informations.
+	var film = Fuseki.getDetailsFilm()
+	.then((response) => {
+    	 console.log(response);
+	})
+	.catch(console.log);
+	// Puis on remplit les champs informations.
 	
 	// On récupére les infos correspondant au film depuis l'onthologie
 	var titre = "";

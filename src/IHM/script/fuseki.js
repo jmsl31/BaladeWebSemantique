@@ -7,7 +7,18 @@ var Fuseki = {
 			"X-Requested-With": "XMLHttpRequest"
 		});
 		const query = `
-	      
+			PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+			PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>
+			PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+			
+			select distinct *
+			where
+			{
+			  ?x dbfilm:sederoule dbfilm:Paris.
+			  ?x dbfilm:titre ?titre.
+			  ?x dbfilm:coordlat ?latittude.
+			  ?x dbfilm:coordlong ?longittude.
+			}
 		`;
 		let formData = new FormData();
 		formData.append('query=', query);
