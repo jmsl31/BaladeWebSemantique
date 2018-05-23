@@ -34,11 +34,10 @@ function update_type(){
 }
 
 
-//On met ï¿½ jour la carte en fonction des filtres
+//On met à jour la carte en fonction des filtres
 function update_map(){
-    
 	console.log("update_map()");
-	//On rï¿½cupere la valeur des filtres
+	//On récupere la valeur des filtres
 	var anneeTournage = document.getElementById("anneeTournage").value;
 	var nbJourTournage = document.getElementById("nbJourTournage").value;
 	var genre_action = document.getElementById("genre_action").value;
@@ -48,40 +47,55 @@ function update_map(){
 	var origine_fr = document.getElementById("origine_fr").value;
 	var origine_etr = document.getElementById("origine_etr").value;
 	
-	// On rï¿½cupere les films [correspondant aux filtres];
-	var films = Fuseki.getFilms()
-	.then((response) => {
-    	 console.log(response.json());
-	})
-	.catch(console.log);
+	// On récupere les films [correspondant aux filtres];
+	var resultat = "";
+	var testQuery = 
+		"		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
+		"		PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>" +
+		"		PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" +
+		"		" +
+		"		select distinct *" +
+		"		where" +
+		"		{" +
+		"		  ?x dbfilm:sederoule dbfilm:Paris." +
+		"		  ?x dbfilm:titre ?titre." +
+		"		  ?x dbfilm:coordlat ?latittude." +
+		"		  ?x dbfilm:coordlong ?longittude." +
+		"		}";
 
-	// Pour tout les films rï¿½cupï¿½rï¿½, on ajoute un marker
-	// Au clic sur le marker, on met a jour la rubrique informations
-	for (film in films){
-		console.log(film.titre);
-		var marker = L.marker([51.5, -0.09]).addTo(map);
-//		marker.bindPopup("<b>Titre film ?</b><br>qque info ?.");
-		marker.on("click", function(e) {
-			select_film(e, "");
-		});
+	var url = "http://localhost:3030/Balade/query";
+	var params = "testQuery";
+	var http = new XMLHttpRequest();
+
+	http.open("POST", url + '?query=' + encodeURIComponent(testQuery), true);
+	http.onreadystatechange = function()
+	{
+	    if(http.readyState == 4 && http.status == 200) {
+	    	films = JSON.parse(http.responseText);
+	    	var i = 0;
+	    	var marker = [];
+	    	for (film in films.results.bindings){
+	    		
+	    		var titre = films.results.bindings[film].titre.value;
+	    		marker[i] = L.marker([films.results.bindings[film].latittude.value, films.results.bindings[film].longittude.value]).addTo(map);
+				marker[i].bindPopup("<b>"+titre+"</b>");
+				console.log("avant click : " + titre);
+				marker[i].on("click", function(e) {
+					select_film(e, titre);
+				});
+				i++;
+	    	}
+	    }
 	}
-
-
+	http.send();
+	
 }
 
-//On sï¿½lectionne un pointeur sur la carte
+//On sélectionne un pointeur sur la carte
 function select_film(e, titre){
-	console.log("Mise ï¿½ jour des informations");
-	
-	// On rï¿½cupere le titre du film, on fait une requete sur l'ontologie
-	var film = Fuseki.getDetailsFilm()
-	.then((response) => {
-    	 console.log(response);
-	})
-	.catch(console.log);
-	// Puis on remplit les champs informations.
-	
-	// On rï¿½cupï¿½re les infos correspondant au film depuis l'onthologie
+	console.log("Mise à jour des informations");
+	console.log("titre : " + titre);
+
 	var titre = "";
 	var annee_sortie = "";
 	var note = "";
@@ -94,19 +108,47 @@ function select_film(e, titre){
 	var acteurs = "";
 	var resume = "";
 	var affiche = "";
+	// On récupere le titre du film, on fait une requete sur l'ontologie
+
+	var resultat = "";
+	var testQuery = 
+		"PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>" +
+		"		select distinct *" +
+		"		where		{" +
+		"		?film dbfilm:titre \"" + titre.replace(/ /g,'') + "\" ." +
+				"?film ?propertie ?value." +
+		"		}";
+
+	var url = "http://localhost:3030/Balade/query";
+	var params = "testQuery";
+	var http = new XMLHttpRequest();
+
+	http.open("POST", url + '?query=' + encodeURIComponent(testQuery), true);
+	http.onreadystatechange = function()
+	{
+	    if(http.readyState == 4 && http.status == 200) {
+	    	films = JSON.parse(http.responseText);
+//	    	for (film in films.results.bindings){
+	    		
+	    		resume = films.results.bindings[4].value.value;
+	    		console.log(titre);
+//	    	}
+	    }
+	}
+	http.send();
 	
-	// On met ï¿½ jour les informations
+	// On met à jour les informations
 	document.getElementById("info_titre").innerHTML = "Titre : " + titre;
-	document.getElementById("info_annee_sortie").innerHTML = "Annï¿½e de sortie : " + annee_sortie;
+	document.getElementById("info_annee_sortie").innerHTML = "Année de sortie : " + annee_sortie;
 	document.getElementById("info_note").innerHTML = "Note (imdb) : " + note;
-	document.getElementById("info_duree").innerHTML = "Durï¿½e : " + duree + " minutes";
+	document.getElementById("info_duree").innerHTML = "Durée : " + duree + " minutes";
 	document.getElementById("info_nb_jour_tournage").innerHTML = "Nombre de jour de tournage : " + nb_jour_tournage + " jours";
 	document.getElementById("info_genre").innerHTML = "Genre : " + genre;
-	document.getElementById("info_realisateur").innerHTML = "Rï¿½alisateur : " + realisateur;
+	document.getElementById("info_realisateur").innerHTML = "Réalisateur : " + realisateur;
 	document.getElementById("info_debut_tournage").innerHTML = "Debut du tournage : " + debut_tournage;
 	document.getElementById("info_fin_tournage").innerHTML = "Fin du tournage : " + fin_tournage;
 	document.getElementById("info_acteurs").innerHTML = "Acteurs : " + acteurs;
-	document.getElementById("info_resume").innerHTML = "Rï¿½sumï¿½ : " + resume;
+	document.getElementById("info_resume").innerHTML = "Résumé : " + resume;
 	
 	document.getElementById("affiche").src = affiche;
 }
