@@ -139,7 +139,7 @@ public class SparqlClient {
             httpPost.setEntity(new UrlEncodedFormEntity(nvps));
             HttpResponse response2 = httpclient.execute(httpPost);
             try {
-                Thread.sleep(1000);
+                Thread.sleep(100);
                         } catch (InterruptedException ex) {
                 Logger.getLogger(SparqlClient.class.getName()).log(Level.SEVERE, null, ex);
             }
