@@ -34,10 +34,11 @@ function update_type(){
 }
 
 
-//On met à jour la carte en fonction des filtres
+//On met ï¿½ jour la carte en fonction des filtres
 function update_map(){
+    
 	console.log("update_map()");
-	//On récupere la valeur des filtres
+	//On rï¿½cupere la valeur des filtres
 	var anneeTournage = document.getElementById("anneeTournage").value;
 	var nbJourTournage = document.getElementById("nbJourTournage").value;
 	var genre_action = document.getElementById("genre_action").value;
@@ -47,14 +48,14 @@ function update_map(){
 	var origine_fr = document.getElementById("origine_fr").value;
 	var origine_etr = document.getElementById("origine_etr").value;
 	
-	// On récupere les films [correspondant aux filtres];
+	// On rï¿½cupere les films [correspondant aux filtres];
 	var films = Fuseki.getFilms()
 	.then((response) => {
-    	 console.log(response);
+    	 console.log(response.json());
 	})
 	.catch(console.log);
 
-	// Pour tout les films récupéré, on ajoute un marker
+	// Pour tout les films rï¿½cupï¿½rï¿½, on ajoute un marker
 	// Au clic sur le marker, on met a jour la rubrique informations
 	for (film in films){
 		console.log(film.titre);
@@ -68,11 +69,11 @@ function update_map(){
 
 }
 
-//On sélectionne un pointeur sur la carte
+//On sï¿½lectionne un pointeur sur la carte
 function select_film(e, titre){
-	console.log("Mise à jour des informations");
+	console.log("Mise ï¿½ jour des informations");
 	
-	// On récupere le titre du film, on fait une requete sur l'ontologie
+	// On rï¿½cupere le titre du film, on fait une requete sur l'ontologie
 	var film = Fuseki.getDetailsFilm()
 	.then((response) => {
     	 console.log(response);
@@ -80,7 +81,7 @@ function select_film(e, titre){
 	.catch(console.log);
 	// Puis on remplit les champs informations.
 	
-	// On récupére les infos correspondant au film depuis l'onthologie
+	// On rï¿½cupï¿½re les infos correspondant au film depuis l'onthologie
 	var titre = "";
 	var annee_sortie = "";
 	var note = "";
@@ -94,18 +95,18 @@ function select_film(e, titre){
 	var resume = "";
 	var affiche = "";
 	
-	// On met à jour les informations
+	// On met ï¿½ jour les informations
 	document.getElementById("info_titre").innerHTML = "Titre : " + titre;
-	document.getElementById("info_annee_sortie").innerHTML = "Année de sortie : " + annee_sortie;
+	document.getElementById("info_annee_sortie").innerHTML = "Annï¿½e de sortie : " + annee_sortie;
 	document.getElementById("info_note").innerHTML = "Note (imdb) : " + note;
-	document.getElementById("info_duree").innerHTML = "Durée : " + duree + " minutes";
+	document.getElementById("info_duree").innerHTML = "Durï¿½e : " + duree + " minutes";
 	document.getElementById("info_nb_jour_tournage").innerHTML = "Nombre de jour de tournage : " + nb_jour_tournage + " jours";
 	document.getElementById("info_genre").innerHTML = "Genre : " + genre;
-	document.getElementById("info_realisateur").innerHTML = "Réalisateur : " + realisateur;
+	document.getElementById("info_realisateur").innerHTML = "Rï¿½alisateur : " + realisateur;
 	document.getElementById("info_debut_tournage").innerHTML = "Debut du tournage : " + debut_tournage;
 	document.getElementById("info_fin_tournage").innerHTML = "Fin du tournage : " + fin_tournage;
 	document.getElementById("info_acteurs").innerHTML = "Acteurs : " + acteurs;
-	document.getElementById("info_resume").innerHTML = "Résumé : " + resume;
+	document.getElementById("info_resume").innerHTML = "Rï¿½sumï¿½ : " + resume;
 	
 	document.getElementById("affiche").src = affiche;
 }
