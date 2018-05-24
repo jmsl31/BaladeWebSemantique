@@ -52,6 +52,7 @@ public class Main {
         i=0;
         for (Film film : ListFilmComplet) {
             film.GetFilmInfo();
+           // film.SetAlignementActeur(film.acteurs);
             film.setUpdateFilmOntologie(film);
             System.out.println(ListFilmComplet.get(i).titre +" a été ajouté.");
             i++;

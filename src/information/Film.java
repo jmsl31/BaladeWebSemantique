@@ -594,20 +594,48 @@ public class Film {
          {
             String t = titre .replaceAll(" ", "");
             String act = acteur.replaceAll(" ","");
+            String dbActeur = acteur.replaceAll(" ","_");
             String query =  "PREFIX : </Balade#>\n"+
             "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
             "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
             "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
+            "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n" +
+            "PREFIX dbo: <http://dbpedia.org/ontology/>\n" +
+            "prefix dbr: <http://dbpedia.org/resource/>"+
         
            " INSERT DATA\n" +
                 "{\n"+
                 "dbfilm:"+act+" dbfilm:jouedans dbfilm:"+t+".\n"+
                 "dbfilm:"+act+" rdfs:label \""+acteur+"\"@fr.\n"+
+                "dbfilm:"+act+" owl:sameas dbr:"+dbActeur+"\n"+    
                 "}";
            
            sparqlClient.update(query);  
          }  
          
+         public void SetAlignementActeur(List<String> acteur)
+         {
+              for (String act :acteur ) 
+             {
+              
+             String ac = act.replaceAll(" ","");
+            String dbActeur = act.replaceAll(" ","_");
+            String query =  "PREFIX : </Balade#>\n"+
+            "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
+            "PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>\n"+
+            "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n"+
+            "PREFIX owl: <http://www.w3.org/2002/07/owl#>\n" +
+            "PREFIX dbo: <http://dbpedia.org/ontology/>\n" +
+            "prefix dbr: <http://dbpedia.org/resource/>"+
+        
+           " INSERT DATA\n" +
+                "{\n"+
+                "dbfilm:"+ac+" owl:sameas dbr:"+dbActeur+"\n"+    
+                "}";
+           
+           sparqlClient.update(query);
+             }
+         }; 
          public void SetOntologieGenre(String titre,String genre)
          {
             String t = titre .replaceAll(" ", "");
