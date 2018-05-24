@@ -5,7 +5,6 @@
  */
 package information;
 
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -52,7 +51,6 @@ public class Main {
         }
         i=0;
         for (Film film : ListFilmComplet) {
-            film.getLieu("Marseille");
             film.GetFilmInfo();
             film.setUpdateFilmOntologie(film);
             System.out.println(ListFilmComplet.get(i).titre +" a été ajouté.");
