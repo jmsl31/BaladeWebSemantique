@@ -26,7 +26,32 @@ function update_ville(){
 	} else if (ville == "sanFrancisco"){
 		map.setView([37.77493, -122.419616], 13);
 	}
-	update_map();
+	
+//	var resultat = "";
+//	var testQuery = 
+//		"PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>" +
+//		"		select distinct *" +
+//		"		where		{" +
+//		"		?film dbfilm:titre \"" + titre + "\" ." +
+//				"?film ?propertie ?value." +
+//		"		}";
+//
+//	var url = "http://localhost:3030/Balade/query";
+//	var params = "testQuery";
+//	var http = new XMLHttpRequest();
+//
+////	console.log(testQuery);
+//	http.open("POST", url + '?query=' + encodeURIComponent(testQuery), true);
+//	http.onreadystatechange = function()
+//	{
+//	    if(http.readyState == 4 && http.status == 200) {
+
+	    	update_map();
+//	    }
+//	}
+//	http.send();
+	
+	
 }
 
 function update_type(){
@@ -34,20 +59,11 @@ function update_type(){
 }
 
 
-//On met à jour la carte en fonction des filtres
+//On met ï¿½ jour la carte en fonction des filtres
 function update_map(){
 	console.log("update_map()");
-	//On récupere la valeur des filtres
-	var anneeTournage = document.getElementById("anneeTournage").value;
-	var nbJourTournage = document.getElementById("nbJourTournage").value;
-	var genre_action = document.getElementById("genre_action").value;
-	var genre_comedie = document.getElementById("genre_comedie").value;
-	var genre_drama = document.getElementById("genre_drama").value;
-	var genre_romance = document.getElementById("genre_romance").value;
-	var origine_fr = document.getElementById("origine_fr").value;
-	var origine_etr = document.getElementById("origine_etr").value;
 	
-	// On récupere les films [correspondant aux filtres];
+	// On rï¿½cupere les films [correspondant aux filtres];
 	var resultat = "";
 	var testQuery = 
 		"		PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" +
@@ -73,15 +89,13 @@ function update_map(){
 	    if(http.readyState == 4 && http.status == 200) {
 	    	films = JSON.parse(http.responseText);
 	    	var i = 0;
-	    	var marker = [];
 	    	for (film in films.results.bindings){
-	    		
 	    		var titre = films.results.bindings[film].titre.value;
-	    		marker[i] = L.marker([films.results.bindings[film].latittude.value, films.results.bindings[film].longittude.value]).addTo(map);
-				marker[i].bindPopup("<b>"+titre+"</b>");
-				console.log("avant click : " + titre);
-				marker[i].on("click", function(e) {
-					select_film(e, titre);
+	    		marker = L.marker([films.results.bindings[film].latittude.value, films.results.bindings[film].longittude.value]).addTo(map);
+	    		marker.bindPopup("<b>"+titre+"</b>");
+	    		marker.titre = titre;
+				marker.on("click", function(e) {
+					select_film(e.target.titre);
 				});
 				i++;
 	    	}
@@ -91,31 +105,18 @@ function update_map(){
 	
 }
 
-//On sélectionne un pointeur sur la carte
-function select_film(e, titre){
-	console.log("Mise à jour des informations");
+//On sï¿½lectionne un pointeur sur la carte
+function select_film(titre){
+	console.log("Mise ï¿½ jour des informations");
 	console.log("titre : " + titre);
 
-	var titre = "";
-	var annee_sortie = "";
-	var note = "";
-	var duree = "";
-	var nb_jour_tournage = "";
-	var genre = "";
-	var realisateur = "";
-	var debut_tournage = "";
-	var fin_tournage = "";
-	var acteurs = "";
-	var resume = "";
-	var affiche = "";
-	// On récupere le titre du film, on fait une requete sur l'ontologie
-
+	// On rï¿½cupere le titre du film, on fait une requete sur l'ontologie
 	var resultat = "";
 	var testQuery = 
 		"PREFIX dbfilm: <http://www.semanticweb.org/johan/ontologies/2018/4/untitled-ontology-3#>" +
 		"		select distinct *" +
 		"		where		{" +
-		"		?film dbfilm:titre \"" + titre.replace(/ /g,'') + "\" ." +
+		"		?film dbfilm:titre \"" + titre + "\" ." +
 				"?film ?propertie ?value." +
 		"		}";
 
@@ -123,32 +124,49 @@ function select_film(e, titre){
 	var params = "testQuery";
 	var http = new XMLHttpRequest();
 
+//	console.log(testQuery);
 	http.open("POST", url + '?query=' + encodeURIComponent(testQuery), true);
 	http.onreadystatechange = function()
 	{
 	    if(http.readyState == 4 && http.status == 200) {
 	    	films = JSON.parse(http.responseText);
-//	    	for (film in films.results.bindings){
 	    		
-	    		resume = films.results.bindings[4].value.value;
-	    		console.log(titre);
-//	    	}
+	    	for (i = 0; i<films.results.bindings.length; i++){
+	    		annee_sortie = infoCorrespondante(i, "annee");
+	    		note =  infoCorrespondante(i, "note");
+	    		duree = infoCorrespondante(i, "duree");
+	    		nb_jour_tournage = infoCorrespondante(i, "nbjourstournage");
+//	    		var genre = "";
+//	    		var realisateur = "";
+//	    		var debut_tournage = "";
+//	    		var fin_tournage = "";
+//	    		var acteurs = "";
+	    		resume = infoCorrespondante(i, "resume");
+	    		affiche = infoCorrespondante(i, "affiche");
+	    	}
+
+    		// On met ï¿½ jour les informations
+    		document.getElementById("info_titre").innerHTML = "Titre : " + titre;
+    		document.getElementById("info_annee_sortie").innerHTML = "Annï¿½e de sortie : " + annee_sortie;
+    		document.getElementById("info_note").innerHTML = "Note (imdb) : " + note;
+    		document.getElementById("info_duree").innerHTML = "Durï¿½e : " + duree + " minutes";
+    		document.getElementById("info_nb_jour_tournage").innerHTML = "Nombre de jour de tournage : " + nb_jour_tournage + " jours";
+//    		document.getElementById("info_genre").innerHTML = "Genre : " + genre;
+//    		document.getElementById("info_realisateur").innerHTML = "Rï¿½alisateur : " + realisateur;
+//    		document.getElementById("info_debut_tournage").innerHTML = "Debut du tournage : " + debut_tournage;
+//    		document.getElementById("info_fin_tournage").innerHTML = "Fin du tournage : " + fin_tournage;
+//    		document.getElementById("info_acteurs").innerHTML = "Acteurs : " + acteurs;
+    		document.getElementById("info_resume").innerHTML = "Rï¿½sumï¿½ : " + resume;
+    		
+    		document.getElementById("affiche").src = affiche;
 	    }
 	}
 	http.send();
-	
-	// On met à jour les informations
-	document.getElementById("info_titre").innerHTML = "Titre : " + titre;
-	document.getElementById("info_annee_sortie").innerHTML = "Année de sortie : " + annee_sortie;
-	document.getElementById("info_note").innerHTML = "Note (imdb) : " + note;
-	document.getElementById("info_duree").innerHTML = "Durée : " + duree + " minutes";
-	document.getElementById("info_nb_jour_tournage").innerHTML = "Nombre de jour de tournage : " + nb_jour_tournage + " jours";
-	document.getElementById("info_genre").innerHTML = "Genre : " + genre;
-	document.getElementById("info_realisateur").innerHTML = "Réalisateur : " + realisateur;
-	document.getElementById("info_debut_tournage").innerHTML = "Debut du tournage : " + debut_tournage;
-	document.getElementById("info_fin_tournage").innerHTML = "Fin du tournage : " + fin_tournage;
-	document.getElementById("info_acteurs").innerHTML = "Acteurs : " + acteurs;
-	document.getElementById("info_resume").innerHTML = "Résumé : " + resume;
-	
-	document.getElementById("affiche").src = affiche;
 }
+
+function infoCorrespondante(i, val){
+	if (films.results.bindings[i].propertie.value.includes(val) ){
+		return films.results.bindings[i].value.value
+	}
+}
+	
